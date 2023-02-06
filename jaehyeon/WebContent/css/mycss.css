@@ -1,0 +1,73 @@
+body{
+    width: 1200px;
+    margin: auto;
+}
+.header{
+	background-image: url("../imgs/logo.png");
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+    width: 300px;
+    height: 50px;
+    display: block;
+    float: left;
+}
+.login{
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    float: right;
+    display: block;
+}
+.menu{
+    clear: both;
+    width: 100%;
+    height: 50px;
+    background-color: dodgerblue;
+}
+.menu>ul{
+	overflow: hidden;
+    list-style: none;
+    padding: 0px;
+    margin: 0px auto;
+	width: 800px;
+}
+.menu>ul>li{
+	width: 200px;
+	float: left;
+}
+.menu>ul>li>a{
+	margin-left: 10px;
+	color: black;
+	background-color: #91bbe5;
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+    text-decoration: none;
+}
+.content{
+    width: 90%;
+    margin: auto;
+    height: 740px;
+}
+.content>table{
+    width: 1000px;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+.content>table>thead{
+	height: 40px;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+.content>table>tbody{}
+.content>table>thead>tr{}
+.content>table>tbody>tr>td{
+    text-align: center;
+}
+.footer{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: gray;
+}
