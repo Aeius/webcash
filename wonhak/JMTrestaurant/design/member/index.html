@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/member/index.css">
+</head>
+<body>
+    <div id="header">
+        <h1>우리 동네 JMT</h1>
+        <div></div>
+    </div>
+    <div id="nav">
+        <ul>
+            <li><a href="#" class="active">홈</a></li>
+            <li><a href="./">회원 목록</a></li>
+            <li><a href="./">맛집 목록</a></li>
+            <li><a href="./">커뮤니티</a></li>
+        </ul>
+    </div>
+    <div id="contents">
+        <div id="main">
+            <div class="searchForm">
+                <div>
+                    <div class="select">
+                        <select name="searchColumn" id="searchColumn">
+                            <option value="m_id">ID</option>
+                            <option value="m_name">이름</option>
+                            <option value="m_email">이메일</option>
+                        </select>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="searchValue" />
+                    </div>
+                    <div class="button">
+                        <button type="button">검색</button>
+                    </div>
+                </div>
+        	</div>
+        	<div class="dataTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>ID</th>
+                            <th>이름</th>
+                            <th>이메일</th>
+                            <th>나이</th>
+                            <th>좋아하는 음식</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataList">
+                        <tr>
+                            <td>1</td>
+                            <td>testgood</td>
+                            <td>test@email.com</td>
+                            <td>tester</td>
+                            <td>29</td>
+                            <td>라면</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>testgood</td>
+                            <td>test@email.com</td>
+                            <td>tester</td>
+                            <td>29</td>
+                            <td>라면</td>
+                        </tr>
+                    </tbody>
+                </table>
+        	</div>
+        	<div class="pagination">
+                <div>
+                    <span>
+                        이전
+                    </span>
+                    <span>
+                        1
+                    </span>
+                    <span>
+                        2
+                    </span>
+                    <span>
+                        3
+                    </span>
+                    <span>
+                        4
+                    </span>
+                    <span>
+                        5
+                    </span>
+                    <span>
+                        다음
+                    </span>
+                </div>
+        	</div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>

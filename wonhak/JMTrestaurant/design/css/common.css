@@ -42,7 +42,7 @@ nav
     box-shadow: 5px 5px 5px 5px #00000085;
     position: relative;
     left: 2%;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 #nav>ul{
     list-style: none;
@@ -74,7 +74,7 @@ contents
     box-shadow: 5px 5px 5px 5px #00000085;
     position: relative;
     right: 2%;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 #main{
     margin: 50px;

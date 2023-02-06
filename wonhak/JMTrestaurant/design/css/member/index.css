@@ -1,0 +1,98 @@
+#main{
+    height: inherit;
+}
+
+/*
+검색폼
+*/
+#main>.searchForm{
+    height:15%;
+    background-color: #fffce4;
+    box-shadow: 5px 5px 5px 5px #00000085;
+    margin-top: 3%;
+    border-radius: 5px;
+    position: relative;
+}
+.searchForm>div{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.searchForm>div>div{
+    float: left;
+}
+.searchForm .select>select{
+    height: 30px;
+    margin: 3px;
+    width: 50px;
+    text-align: center;
+}
+.searchForm .input>input{
+    height: 30px;
+    margin: 3px;
+    width: 300px;
+    text-align: center;
+}
+.searchForm .button>button{
+    width: 100px;
+    height: 40px;
+    background-color: #fb3737;
+    border: unset;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/*
+테이블
+*/
+#main>.dataTable{
+    height:72%;
+    background-color: #fffce4;
+    box-shadow: 5px 5px 5px 5px #00000085;
+    margin-top: 3%;
+    border-radius: 5px;
+    /*overflow-y: scroll;*/
+}
+.dataTable table{
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 5px;
+}
+.dataTable table,th,td{
+    border-bottom: 1px solid #ddd;
+    height: 30px;
+}
+.dataTable thead>tr>th{
+    background-color: #fb3737;
+    color: white;
+}
+.dataTable tbody>tr{
+    text-align: center;
+}
+.dataTable tbody>tr{
+    text-align: center;
+}
+
+/*
+페이지네이션
+*/
+#main>.pagination{
+    height:7%;
+    background-color: #fffce4;
+    box-shadow: 5px 5px 5px 5px #00000085;
+    margin-top: 3%;
+    border-radius: 5px;
+    position: relative;
+}
+.pagination>div{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.pagination>div>span{
+    margin: 0px 10px 0px 10px;
+}
