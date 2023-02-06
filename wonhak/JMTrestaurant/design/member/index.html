@@ -1,14 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <jsp:include page="/pages/templates/head.jsp">
-        <jsp:param value="member/index" name="pageName" />
-    </jsp:include> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/member/index.css">
+</head>
 <body>
-	<jsp:include page="/pages/templates/header.jsp"></jsp:include> 
-	<jsp:include page="/pages/templates/nav.jsp"></jsp:include> 
-	<div id="contents">
+    <div id="header">
+        <h1>우리 동네 JMT</h1>
+        <div></div>
+    </div>
+    <div id="nav">
+        <ul>
+            <li><a href="#" class="active">홈</a></li>
+            <li><a href="./">회원 목록</a></li>
+            <li><a href="./">맛집 목록</a></li>
+            <li><a href="./">커뮤니티</a></li>
+        </ul>
+    </div>
+    <div id="contents">
         <div id="main">
             <div class="searchForm">
                 <div>
@@ -86,9 +97,6 @@
         	</div>
         </div>
     </div>
-	<jsp:include page="/pages/templates/footer.jsp"></jsp:include> 
-	<jsp:include page="/pages/templates/foot.jsp">
-        <jsp:param value="index" name="pageName" />
-    </jsp:include> 
+    <div id="footer"></div>
 </body>
 </html>
