@@ -36,26 +36,12 @@
                             <th>이름</th>
                             <th>이메일</th>
                             <th>나이</th>
-                            <th>좋아하는 음식</th>
+                            <th>성별</th>
+                            <th>등록일</th>
                         </tr>
                     </thead>
                     <tbody id="dataList">
-                        <tr>
-                            <td>1</td>
-                            <td>testgood</td>
-                            <td>test@email.com</td>
-                            <td>tester</td>
-                            <td>29</td>
-                            <td>라면</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>testgood</td>
-                            <td>test@email.com</td>
-                            <td>tester</td>
-                            <td>29</td>
-                            <td>라면</td>
-                        </tr>
+                        
                     </tbody>
                 </table>
         	</div>
@@ -87,8 +73,6 @@
         </div>
     </div>
 	<jsp:include page="/pages/templates/footer.jsp"></jsp:include> 
-	<jsp:include page="/pages/templates/foot.jsp">
-        <jsp:param value="index" name="pageName" />
-    </jsp:include> 
+	<jsp:include page="/pages/templates/foot.jsp"></jsp:include> 
 </body>
 </html>

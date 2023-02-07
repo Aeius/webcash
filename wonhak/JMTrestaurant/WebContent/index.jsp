@@ -14,8 +14,6 @@
         </div>
     </div>
 	<jsp:include page="./pages/templates/footer.jsp"></jsp:include> 
-	<jsp:include page="./pages/templates/foot.jsp">
-        <jsp:param value="index" name="pageName" />
-    </jsp:include> 
+	<jsp:include page="./pages/templates/foot.jsp"></jsp:include> 
 </body>
 </html>
