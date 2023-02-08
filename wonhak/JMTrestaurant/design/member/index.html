@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/common2.css">
     <link rel="stylesheet" href="../css/member/index.css">
+    <script src="../js/common/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $('#nav .menu')
+            .mouseenter(function(){
+                $(this).find('ul').animate({'opacity':'1','height':'100%'},300,'linear');
+            })
+            .mouseleave(function(){
+                $(this).find('ul').animate({'opacity':'0','height':'0px'},300,'linear');
+            });
+            
+        });
+    </script>
 </head>
 <body>
     <div id="header">
@@ -13,10 +26,33 @@
     </div>
     <div id="nav">
         <ul>
-            <li><a href="#" class="active">홈</a></li>
-            <li><a href="../member/index.html">회원 목록</a></li>
-            <li><a href="./">맛집 목록</a></li>
-            <li><a href="./">커뮤니티</a></li>
+            <li>
+                <a href="#" class="active">홈</a>
+            </li>
+            <li class="menu">
+                <a href="../member/index.html">회원 목록</a>
+                <ul>
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                </ul>
+            </li>
+            <li class="menu">
+                <a href="./">맛집 목록</a>
+                <ul>
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                </ul>
+            </li>
+            <li class="menu">
+                <a href="./">커뮤니티</a>
+                <ul>
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                </ul>
+            </li>
         </ul>
     </div>
     <div id="contents">
@@ -70,6 +106,11 @@
                     </tbody>
                 </table>
         	</div>
+            <div class="buttonForm">
+                <div class="buttonGroup">
+                    <button>추가</button>
+                </div>
+            </div>
         	<div class="pagination">
                 <div>
                     <span>

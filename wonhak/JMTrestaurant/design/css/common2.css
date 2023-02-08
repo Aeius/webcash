@@ -3,6 +3,7 @@
 */
 :root{
     --theme-color:#fb3737;
+    --border-line-color:#9d9c9c;
 }
 
 *{
@@ -51,7 +52,7 @@ nav
     text-align: center;
 }
 #nav>ul>li{
-    display: inline-block;
+    display: inline-grid;
     margin: 0px 15px 0px 15px;
 }
 #nav>ul>li>a{
@@ -62,6 +63,19 @@ nav
 }
 #nav>ul>li>a.active{
     color: black;
+}
+#nav .menu>ul{
+    height: 0px;
+    position: relative;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid var(--border-line-color);
+    margin-top: 8px;
+    z-index: 9999;
+    width: 129px;
+    box-shadow: 4px 4px 5px 2px #484646a8;
+    opacity: 0;
+    overflow: hidden;
 }
 
 /*
