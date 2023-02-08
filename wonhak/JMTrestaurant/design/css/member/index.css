@@ -7,8 +7,7 @@
 */
 #main>.searchForm{
     height:15%;
-    background-color: #fffce4;
-    box-shadow: 5px 5px 5px 5px #00000085;
+    border: 1px solid #9d9c9c;
     margin-top: 3%;
     border-radius: 5px;
     position: relative;
@@ -37,7 +36,7 @@
 .searchForm .button>button{
     width: 100px;
     height: 40px;
-    background-color: #fb3737;
+    background-color: var(--theme-color);
     border: unset;
     border-radius: 5px;
     color: white;
@@ -50,8 +49,7 @@
 */
 #main>.dataTable{
     height:72%;
-    background-color: #fffce4;
-    box-shadow: 5px 5px 5px 5px #00000085;
+    border: 1px solid #9d9c9c;
     margin-top: 3%;
     border-radius: 5px;
     /*overflow-y: scroll;*/
@@ -66,7 +64,7 @@
     height: 30px;
 }
 .dataTable thead>tr>th{
-    background-color: #fb3737;
+    background-color: var(--theme-color);
     color: white;
 }
 .dataTable tbody>tr{
@@ -81,8 +79,7 @@
 */
 #main>.pagination{
     height:7%;
-    background-color: #fffce4;
-    box-shadow: 5px 5px 5px 5px #00000085;
+    border: 1px solid #9d9c9c;
     margin-top: 3%;
     border-radius: 5px;
     position: relative;
