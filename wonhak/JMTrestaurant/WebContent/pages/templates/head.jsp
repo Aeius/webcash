@@ -9,5 +9,8 @@
     <title>우리 동네 맛집</title>
     <link rel="stylesheet" href="<%="/"+projectName+"/css/common.css"%>">
     <link rel="stylesheet" href="<%="/"+projectName+"/css/"+pageName+".css"%>">
+    
+    <script src="<%="/"+projectName+"/js/common/jquery-1.12.4.min.js"%>"></script>
+    <script src="<%="/"+projectName+"/js/common/index.js"%>"></script>
     <script src="<%="/"+projectName+"/js/"+pageName+".js"%>"></script>
 </head>
