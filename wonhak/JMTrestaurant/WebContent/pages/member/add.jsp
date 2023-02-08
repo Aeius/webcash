@@ -54,7 +54,7 @@
                     </div>
                     <div class="buttonGroup">
                         <button type="submit">등록</button>
-                        <button type="button" onclick="location.href='./index.html'">뒤로가기</button>
+                        <button type="button" onclick="location.href='./'">뒤로가기</button>
                     </div>
                 </form>
             </div>
