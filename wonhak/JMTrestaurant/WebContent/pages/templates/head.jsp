@@ -6,7 +6,7 @@
     %>
 <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <title>우리 동네 맛집</title>
     <link rel="stylesheet" href="<%="/"+projectName+"/css/common.css"%>">
     <link rel="stylesheet" href="<%="/"+projectName+"/css/"+pageName+".css"%>">
     <script src="<%="/"+projectName+"/js/"+pageName+".js"%>"></script>

@@ -56,7 +56,7 @@ public class MysqlConnect {
 		Statement stmt=null;
 		
 		try {
-			sql="CREATE DATABASE IF NOT EXISTS jmt default CHARACTER SET UTF8";
+			sql="CREATE DATABASE IF NOT EXISTS jmt default CHARACTER SET UTF8 COLLATE utf8_general_ci";
 			stmt = conn.createStatement();
 			stmt.execute(sql);
 
@@ -81,6 +81,7 @@ public class MysqlConnect {
 		try {
 			sql="CREATE TABLE IF NOT EXISTS member(";
 			sql+="m_id varchar(50) primary key,";
+			sql+="password varchar(100) not null,";
 			sql+="name varchar(20) not null,";
 			sql+="email varchar(50) not null,";
 			sql+="age int not null default(0),";

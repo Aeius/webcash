@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+.inputWrap{
+    border: 1px solid var(--border-line-color);
+}
+.inputWrap>.title{
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-line-color);
+    margin: 30px 90px;
+}
+.inputWrap>.title>h2{
+    text-align: center;
+}
+
+/*
+입력폼 그룹
+*/
+.inputWrap .inputGroup{
+    padding-bottom: 90px;
+    border-bottom: 1px solid var(--border-line-color);
+    margin: 30px 90px;
+}
+.inputWrap .inputGroup>div{
+    padding: 25px;
+    clear: both;
+}
+.inputWrap .inputGroup .inputForm>label{
+    float: left;
+}
+.inputWrap .inputGroup .inputForm>input{
+    float: right;
+    width: 75%;
+    height: 30px;
+    font-size: 18px;
+    text-indent: 10px;
+}
+.inputWrap .inputGroup .selectForm>label{
+    float: left;
+}
+.inputWrap .inputGroup .selectForm>select{
+    float: right;
+    width: 35%;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+}
+.inputWrap .inputGroup .radioForm>label{
+    float: left;
+}
+.inputWrap .inputGroup .radioForm>.radioGroup{
+    float: right;
+    width: 35%;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+}
+.inputWrap .inputGroup .radioForm>.radioGroup>input+label{
+    margin-right: 35px;
+}
+
+/*
+버튼 그룹
+*/
+.inputWrap .buttonGroup{
+    margin: 30px;
+    text-align: center;
+}
+.inputWrap .buttonGroup button{
+    width: 100px;
+    height: 40px;
+    background-color: var(--theme-color);
+    border: unset;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
