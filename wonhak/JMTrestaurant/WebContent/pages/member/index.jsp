@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%
+    String projectName = "JMTrestaurant";
+    %>
 <!DOCTYPE html>
 <html>
     <jsp:include page="/pages/templates/head.jsp">
@@ -45,6 +48,11 @@
                     </tbody>
                 </table>
         	</div>
+        	<div class="buttonForm">
+                <div class="buttonGroup">
+                    <button type="button" onclick="location.href='./add.jsp'">추가</button>
+                </div>
+            </div>
         	<div class="pagination">
                 <div>
                     <span>
