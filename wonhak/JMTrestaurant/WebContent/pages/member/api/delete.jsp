@@ -7,23 +7,11 @@ page import="customMysql.MysqlConnect, java.sql.*"
 request.setCharacterEncoding("utf-8");
 
 String m_id = request.getParameter("m_id")!=null?convertStrToSafety(request.getParameter("m_id")):"";
-String password = request.getParameter("password")!=null?convertStrToSafety(request.getParameter("password")):"";
-String name = request.getParameter("name")!=null?convertStrToSafety(request.getParameter("name")):"";
-String email = request.getParameter("email")!=null?convertStrToSafety(request.getParameter("email")):"";
-int age = request.getParameter("age")!=null?Integer.parseInt(convertStrToSafety(request.getParameter("age"))):0;
-String gender = request.getParameter("gender")!=null?convertStrToSafety(request.getParameter("gender")):"M";
 
 Connection conn=null;
 Statement stmt=null;
 
-String sql="update member set ";
-if(password!=null) sql+="password = md5('"+password+"'), ";
-if(name!=null) sql+="name = '"+name+"', ";
-if(email!=null) sql+="email = '"+email+"', ";
-if(age!=0) sql+="age = "+age+", ";
-if(gender!=null) sql+="gender = '"+gender+"' ";
-sql+=" where m_id = '"+m_id+"' ";
-
+String sql="delete from member where m_id = '"+m_id+"' ";
 try{
 	conn=MysqlConnect.getConn();
 	stmt=conn.createStatement();

@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="<%="/"+projectName+"/css/common.css"%>">
     <link rel="stylesheet" href="<%="/"+projectName+"/css/"+pageName+".css"%>">
     
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="<%="/"+projectName+"/css/common/font-awesome-4.7.0/css/font-awesome.css"%>">
+    
+    <!-- jquery -->
     <script src="<%="/"+projectName+"/js/common/jquery-1.12.4.min.js"%>"></script>
     <script src="<%="/"+projectName+"/js/common/index.js"%>"></script>
+    
     <script src="<%="/"+projectName+"/js/"+pageName+".js"%>"></script>
 </head>

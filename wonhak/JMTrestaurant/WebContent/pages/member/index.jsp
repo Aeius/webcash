@@ -18,15 +18,15 @@
                     <div class="select">
                         <select name="searchColumn" id="searchColumn">
                             <option value="m_id">ID</option>
-                            <option value="m_name">이름</option>
-                            <option value="m_email">이메일</option>
+                            <option value="name">이름</option>
+                            <option value="email">이메일</option>
                         </select>
                     </div>
                     <div class="input">
                         <input type="text" id="searchValue" />
                     </div>
                     <div class="button">
-                        <button type="button">검색</button>
+                        <button type="button" onclick="searchResult();">검색</button>
                     </div>
                 </div>
         	</div>
@@ -41,6 +41,7 @@
                             <th>나이</th>
                             <th>성별</th>
                             <th>등록일</th>
+                            <th>설정</th>
                         </tr>
                     </thead>
                     <tbody id="dataList">
@@ -77,6 +78,22 @@
                         다음
                     </span>
                 </div>
+        	</div>
+        	<div class="popupForm">
+        		<div class="popupWrap">
+        			<div class="popup">
+	        			<div class="popupHeader">
+	        				<i class="fa fa-window-close-o" aria-hidden="true"></i>
+	        			</div>
+	        			<div class="popupMain">
+	        				<p>해당 회원을 정말 삭제하시겠습니까?</p>
+	        			</div>
+	        			<div class="popupFooter">
+	        				
+	        			</div>
+	        		</div>
+        		</div>
+        		
         	</div>
         </div>
     </div>
