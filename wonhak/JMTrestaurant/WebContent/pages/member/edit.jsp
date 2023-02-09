@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <jsp:include page="/pages/templates/head.jsp">
-        <jsp:param value="member/add" name="pageName" />
+        <jsp:param value="member/edit" name="pageName" />
     </jsp:include> 
 <body>
 	<jsp:include page="/pages/templates/header.jsp"></jsp:include> 
@@ -12,13 +12,16 @@
         <div id="main">
             <div class="inputWrap">
                 <div class="title">
-                    <h2>회원 추가</h2>
+                    <h2>회원 수정</h2>
                 </div>
-                <form action="./api/insert.jsp" method="post">
+                <jsp:useBean id="member" class="model.Member"></jsp:useBean>
+                <jsp:setProperty property="m_id" name="member"/>
+                <form action="./api/update.jsp" method="post">
+                	<input type="hidden" name="m_id" value="<%=member.getM_id()%>" />
                     <div class="inputGroup">
                         <div class="inputForm">
                             <label for="m_id">ID</label>
-                            <input type="text" name="m_id" id="m_id" />
+                            <input type="text" name="m_id" id="m_id" readonly />
                         </div>
                         <div class="inputForm">
                             <label for="name">이름</label>
@@ -39,7 +42,7 @@
                         <div class="selectForm">
                             <label for="age">나이</label>
                             <select name="age" id="age">
-                                <%
+                            	<%
                             	for(int i=8;i<=65;i++){
                             	%>
                                 <option value="<%=i%>"><%=i%>세</option>
@@ -59,7 +62,7 @@
                         </div>
                     </div>
                     <div class="buttonGroup">
-                        <button type="submit">등록</button>
+                        <button type="submit">수정</button>
                         <button type="button" onclick="location.href='./'">뒤로가기</button>
                     </div>
                 </form>

@@ -6,25 +6,20 @@ page import="customMysql.MysqlConnect, java.sql.*, java.util.*, model.Member"
 <%
 request.setCharacterEncoding("utf-8");
 
-String searchColumn = request.getParameter("searchColumn")!=null?convertStrToSafety(request.getParameter("searchColumn")):"";
-String searchValue = request.getParameter("searchValue")!=null?convertStrToSafety(request.getParameter("searchValue")):"";
+String m_id = request.getParameter("m_id")!=null?request.getParameter("m_id"):"";
 
 Connection conn=null;
 Statement stmt=null;
 ResultSet rs=null;
 ArrayList<Member> result = new ArrayList<Member>();
 
-String sqlWhere=" where 1=1 ";
-if(!searchColumn.equals("") && !searchValue.equals("")) sqlWhere+="and "+searchColumn+" like '%"+searchValue+"%' ";
-String sql="select * from member "+sqlWhere+" order by reg_date";
-System.out.println(sql);
-
+String sql="select * from member where m_id='"+m_id+"' ";
 try{
 	conn=MysqlConnect.getConn();
 	stmt=conn.createStatement();
 	rs=stmt.executeQuery(sql);
 	
-	while(rs.next()){
+	if(rs.next()){
 		Member member = new Member();
 		member.setM_id(rs.getString("m_id"));
 		member.setName(rs.getString("name"));
@@ -40,9 +35,7 @@ try{
 	if(stmt!=null) stmt.close();
 	if(conn!=null) conn.close();
 }
-%>
-[
-<%
+
 for(int i=0;i<result.size();i++){
 	Member member=result.get(i);
 %>
@@ -51,18 +44,4 @@ for(int i=0;i<result.size();i++){
 if(i!=result.size()-1) out.print(",");
 }
 %>
-]
-<%!
-public String convertStrToSafety(String str){
-	str=str.replace("--", "­­");
-	str=str.replace("'", "＇");
-	str=str.replace(",", "，");
-	str=str.replace("<", "＜");
-	str=str.replace(">", "＞");
-	str=str.replace("(", "（");
-	str=str.replace(")", "）");
-	str=str.replace("%", "％");
-	
-	return str;
-}
-%>
+
