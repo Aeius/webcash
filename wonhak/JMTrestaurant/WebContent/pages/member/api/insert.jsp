@@ -10,7 +10,7 @@ String m_id = request.getParameter("m_id")!=null?convertStrToSafety(request.getP
 String password = request.getParameter("password")!=null?convertStrToSafety(request.getParameter("password")):"";
 String name = request.getParameter("name")!=null?convertStrToSafety(request.getParameter("name")):"";
 String email = request.getParameter("email")!=null?convertStrToSafety(request.getParameter("email")):"";
-int age = request.getParameter("age")!=null?Integer.parseInt(convertStrToSafety(request.getParameter("age"))):8;
+int age = request.getParameter("age")!=null?Integer.parseInt(convertStrToSafety(request.getParameter("age"))):0;
 String gender = request.getParameter("gender")!=null?convertStrToSafety(request.getParameter("gender")):"M";
 
 Connection conn=null;
