@@ -7,9 +7,23 @@
 - HTML
 - CSS
 - JavaScript
+- jQuery
+- Ajax
 ## DEVELOPMENT
 - carousel
-- on/off menu
 - animation
-- single page application
-- xhr json
+  - on/off menu
+- reply
+- mypage
+- pagination
+- search
+ - num
+ - name
+- media query
+ - tablet
+ - moblie
+ - pc
+
+반별
+수업별
+과목별

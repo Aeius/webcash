@@ -1,9 +1,0 @@
-<!DOCTYPE html>
-<div class="menu">
-    <ul>
-        <li><a href="#">학생 성적</a></li>
-        <li><a href="#">정정 요청 게시판</a></li>
-        <li><a href="#">나의 성적</a></li>
-        <li><a href="#">성적 관리</a></li>
-    </ul>
-</div>
