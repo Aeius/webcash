@@ -2,7 +2,10 @@
  * member - index.js
  */
  var xhr;
- var parameter="";
+ var currentPageNum=0;
+ var countDataInPage=10;
+ var countInPageGroup=5;
+ var parameter="?currentPageNum="+currentPageNum+"&countDataInPage="+countDataInPage+"&countInPageGroup="+countInPageGroup;
 
  window.onload=function(){
  	getData();
@@ -31,7 +34,7 @@ function searchResult(){
 	var searchColumn = document.getElementById('searchColumn').value;
 	var searchValue = document.getElementById('searchValue').value;
 	
-	parameter="?searchColumn="+searchColumn+"&searchValue="+searchValue;
+	parameter="?currentPageNum="+currentPageNum+"&countDataInPage="+countDataInPage+"&countInPageGroup="+countInPageGroup+"&searchColumn="+searchColumn+"&searchValue="+searchValue;
 	getData();
 }
 
@@ -43,7 +46,10 @@ function getData(){
  	xhr=new XMLHttpRequest();
  	xhr.onreadystatechange=function(ele){
  		if(xhr.readyState==4 && xhr.status==200){
- 		 	var data = JSON.parse(xhr.responseText);
+ 		 	var result = JSON.parse(xhr.responseText);
+ 		 	var data = result.data;
+ 		 	var totalDataCount = result.totalDataCount;
+ 		 	
  		 	var num=1;
  			for(value of data){
  				tbodyHTML+="<tr>";
@@ -59,6 +65,8 @@ function getData(){
  				num++;
  			}
  			tbody.innerHTML=tbodyHTML;
+ 			
+ 			console.log(totalDataCount/countInPageGroup);
  		}
  	};
  	xhr.open('get','/JMTrestaurant/pages/member/api/list.jsp'+parameter);
