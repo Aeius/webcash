@@ -26,6 +26,7 @@ try{
 	sql+="'"+age+"',";
 	sql+="'"+gender+"'";
 	sql+=")";
+	System.out.println(sql);
 	
 	conn=MysqlConnect.getConn();
 	stmt=conn.createStatement();

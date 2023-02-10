@@ -6,6 +6,9 @@ page import="customMysql.MysqlConnect, java.sql.*, java.util.*, model.Member"
 <%
 request.setCharacterEncoding("utf-8");
 
+int currentPageNum = request.getParameter("currentPageNum")!=null?Integer.parseInt(request.getParameter("currentPageNum")):0;
+int countDataInPage = request.getParameter("countDataInPage")!=null?Integer.parseInt(request.getParameter("countDataInPage")):0;
+int countInPageGroup = request.getParameter("countInPageGroup")!=null?Integer.parseInt(request.getParameter("countInPageGroup")):0;
 String searchColumn = request.getParameter("searchColumn")!=null?convertStrToSafety(request.getParameter("searchColumn")):"";
 String searchValue = request.getParameter("searchValue")!=null?convertStrToSafety(request.getParameter("searchValue")):"";
 
@@ -14,12 +17,15 @@ Statement stmt=null;
 ResultSet rs=null;
 ArrayList<Member> result = new ArrayList<Member>();
 
-String sqlWhere=" where 1=1 ";
-if(!searchColumn.equals("") && !searchValue.equals("")) sqlWhere+="and "+searchColumn+" like '%"+searchValue+"%' ";
-String sql="select * from member "+sqlWhere+" order by reg_date";
-System.out.println(sql);
+String sql="";
+String sqlWhere="";
+int totalDataCount=0;
 
 try{
+	sqlWhere=" where 1=1 ";
+	if(!searchColumn.equals("") && !searchValue.equals("")) sqlWhere+="and "+searchColumn+" like '%"+searchValue+"%' ";
+	sql="select * from member "+sqlWhere+" order by reg_date desc limit "+currentPageNum+", "+countDataInPage;
+	
 	conn=MysqlConnect.getConn();
 	stmt=conn.createStatement();
 	rs=stmt.executeQuery(sql);
@@ -34,6 +40,7 @@ try{
 		member.setReg_date(rs.getString("reg_date"));
 		
 		result.add(member);
+		totalDataCount++;
 	}
 }finally{
 	if(rs!=null) rs.close();
@@ -41,17 +48,20 @@ try{
 	if(conn!=null) conn.close();
 }
 %>
-[
-<%
-for(int i=0;i<result.size();i++){
-	Member member=result.get(i);
-%>
-{"m_id":"<%=member.getM_id() %>","name":"<%=member.getName() %>","email":"<%=member.getEmail() %>","age":"<%=member.getAge() %>","gender":"<%=member.getGender() %>","reg_date":"<%=member.getReg_date() %>"}
-<%
-if(i!=result.size()-1) out.print(",");
+{
+	"data":[
+	<%
+	for(int i=0;i<result.size();i++){
+		Member member=result.get(i);
+	%>
+	{"m_id":"<%=member.getM_id() %>","name":"<%=member.getName() %>","email":"<%=member.getEmail() %>","age":"<%=member.getAge() %>","gender":"<%=member.getGender() %>","reg_date":"<%=member.getReg_date() %>"}
+	<%
+	if(i!=result.size()-1) out.print(",");
+	}
+	%>
+	],
+	"totalDataCount":<%=totalDataCount%>
 }
-%>
-]
 <%!
 public String convertStrToSafety(String str){
 	str=str.replace("--", "­­");
