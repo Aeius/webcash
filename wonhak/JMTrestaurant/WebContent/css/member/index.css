@@ -52,7 +52,7 @@
     border: 1px solid var(--border-line-color);
     margin-top: 3%;
     border-radius: 5px;
-    /*overflow-y: scroll;*/
+    overflow-y: scroll;
 }
 .dataTable table{
     border-collapse: collapse;
