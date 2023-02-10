@@ -1,73 +1,251 @@
-body{
-    width: 1200px;
-    margin: auto;
+@media screen and (max-width: 600px){
+	body{
+	    width: 480px;
+	    margin: auto;
+	}
+	.header{
+		background-image: url("../imgs/logo.png");
+		background-repeat: no-repeat;
+		text-indent: -9999px;
+	    width: 250px;
+	    height: 50px;
+	    display: block;
+	    float: left;
+	}
+	.login{
+	    width: 200px;
+	    height: 50px;
+	    line-height: 50px;
+	    float: right;
+	    display: block;
+	}
+	.menu{
+	    clear: both;
+	    width: 100%;
+	    height: 50px;
+	    background-color: dodgerblue;
+	}
+	.menu>ul{
+		overflow: hidden;
+	    list-style: none;
+	    padding: 0px;
+	    margin: 0px auto;
+		width: 480px;
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.menu>ul>li{
+		width: 80px;
+		float: left;
+	}
+	
+	.menu>ul>li>a{
+		border-radius: 5px;
+		margin-left: 5px;
+		color: black;
+		display: block;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+	    text-decoration: none;
+		background-color: #91bbe5;
+	}
+	.menu>ul>li>a:hover{
+		color: dodgerblue;
+	}
+	h1{
+		font-size: 19pt;
+	}
+	.content{
+	    width: 90%;
+	    margin: auto;
+	    padding: 10px;
+	}
+	.content>table{
+	    width: 100%;
+	    border: 1px solid;
+	    border-collapse: collapse;
+	}
+	.content>table>thead{
+		height: 4px;
+	    border: 1px solid;
+	    border-collapse: collapse;
+	}
+	.content>table>tbody{}
+	.content>table>thead>tr{}
+	.content>table>thead>tr>th{
+		background-color: dodgerblue;
+		color: white;
+	}
+	.content>table>tbody>tr{
+	}
+	.content>table>tbody>tr>td{
+	    text-align: center;
+	}
+	.content>table>tbody>tr>td:nth-child(1){
+	    width: 55px;
+	}
+	.content>table>tbody>tr>td:nth-child(2){
+		width: 140px;
+	    text-align: left;
+	    overflow: hidden;
+	    text-overflow:ellipsis;	
+		display: -webkit-box;
+		-webkit-line-clamp: 1; /* 라인수 */
+	    -webkit-box-orient: vertical;
+	    word-wrap:break-word; 
+	    line-height: 1.2em;
+	    height: 1.2em
+	}
+	.content>table>tbody>tr>td:nth-child(3){
+	    width:58px;
+	}
+	.content>table>tbody>tr>td:nth-child(4){
+	    width:95px;
+	}
+	.content>table>tbody>tr>td:nth-child(5){
+	    width:55px;
+	}
+	.content>table>tbody>tr>td>a{
+		text-decoration: none;
+		color: black;
+	}
+	.content>table>tbody>tr>td>a:hover{
+		text-decoration: none;
+		color: dodgerblue;
+	}
+	#pagination{
+		width: 200px;
+		margin: 5px auto;
+	}
+	#pagination>a{
+		color: black;
+		text-decoration: none;
+	}
+	#pagination>a:hover{
+		color: dodgerblue;
+	}
+	#search{
+		width: 350px;
+		margin: 5px auto;
+	}
+	#search>a{
+		color: black;
+		text-decoration: none;
+	}
+	#search>a:hover{
+		color: dodgerblue;
+	}
+	.footer{
+	    width: 100%;
+	    height: 50px;
+	    line-height: 50px;
+	    background-color: gray;
+	}
 }
-.header{
-	background-image: url("../imgs/logo.png");
-	background-repeat: no-repeat;
-	text-indent: -9999px;
-    width: 300px;
-    height: 50px;
-    display: block;
-    float: left;
-}
-.login{
-    width: 300px;
-    height: 50px;
-    line-height: 50px;
-    float: right;
-    display: block;
-}
-.menu{
-    clear: both;
-    width: 100%;
-    height: 50px;
-    background-color: dodgerblue;
-}
-.menu>ul{
-	overflow: hidden;
-    list-style: none;
-    padding: 0px;
-    margin: 0px auto;
-	width: 800px;
-}
-.menu>ul>li{
-	width: 200px;
-	float: left;
-}
-.menu>ul>li>a{
-	margin-left: 10px;
-	color: black;
-	background-color: #91bbe5;
-	display: block;
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-    text-decoration: none;
-}
-.content{
-    width: 90%;
-    margin: auto;
-    height: 740px;
-}
-.content>table{
-    width: 1000px;
-    border: 1px solid;
-    border-collapse: collapse;
-}
-.content>table>thead{
-	height: 40px;
-    border: 1px solid;
-    border-collapse: collapse;
-}
-.content>table>tbody{}
-.content>table>thead>tr{}
-.content>table>tbody>tr>td{
-    text-align: center;
-}
-.footer{
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    background-color: gray;
+@media screen and (min-width: 601px){
+	body{
+	    width: 1100px;
+	    margin: auto;
+	}
+	.header{
+		background-image: url("../imgs/logo.png");
+		background-repeat: no-repeat;
+		text-indent: -9999px;
+	    width: 300px;
+	    height: 50px;
+	    display: block;
+	    float: left;
+	}
+	.login{
+	    width: 300px;
+	    height: 50px;
+	    line-height: 50px;
+	    float: right;
+	    display: block;
+	}
+	.menu{
+	    clear: both;
+	    width: 100%;
+	    height: 50px;
+	    background-color: dodgerblue;
+	}
+	.menu>ul{
+		overflow: hidden;
+	    list-style: none;
+	    padding: 0px;
+	    margin: 0px auto;
+		width: 800px;
+	}
+	.menu>ul>li{
+		width: 200px;
+		float: left;
+	}
+	
+	.menu>ul>li>a{
+		margin-left: 20px;
+		color: black;
+		display: block;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+	    text-decoration: none;
+		background-color: #91bbe5;
+	}
+	.menu>ul>li>a:hover{
+		color: dodgerblue;
+	}
+	.content{
+	    width: 90%;
+	    margin: auto;
+	    height: 740px;
+	}
+	.content>table{
+	    width: 1000px;
+	    border: 1px solid;
+	    border-collapse: collapse;
+	}
+	.content>table>thead{
+		height: 40px;
+	    border: 1px solid;
+	    border-collapse: collapse;
+	}
+	.content>table>tbody{}
+	.content>table>thead>tr{}
+	.content>table>thead>tr>th{
+		background-color: dodgerblue;
+		color: white;
+	}
+	.content>table>tbody>tr>td{
+	    text-align: center;
+	}
+	.content>table>tbody>tr>td:nth-child(1){
+	    width: 100px;
+	}
+	.content>table>tbody>tr>td:nth-child(2){
+	    text-align: left;
+	}
+	.content>table>tbody>tr>td:nth-child(3){
+	    width:100px;
+	}
+	.content>table>tbody>tr>td:nth-child(4){
+	    width:100px;
+	}
+	.content>table>tbody>tr>td:nth-child(5){
+	    width:100px;
+	}
+	.content>table>tbody>tr>td>a{
+		text-decoration: none;
+		color: black;
+	}
+	.content>table>tbody>tr>td>a:hover{
+		text-decoration: none;
+		color: dodgerblue;
+	}
+	.footer{
+	    width: 100%;
+	    height: 50px;
+	    line-height: 50px;
+	    background-color: gray;
+	}
 }

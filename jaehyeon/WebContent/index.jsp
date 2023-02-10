@@ -6,15 +6,27 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="css/mycss.css" rel="stylesheet">
-<script type="text/javascript">
+<link href="css/carousel.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/carousel.js"></script>
 
-</script>
 </head>
 <body>
-<jsp:include page="template/header.jspf"/>
-<jsp:include page="template/menu.jspf"/>
+<%@ include file="template/header2.jsp" %>
+<%@ include file="template/menu.jsp" %>
+    
 <div class="content">
 <h1>학생 성적 관리 웹사이트(ver 0.7.0)</h1>
+    <div class="carousel">
+        <ul>
+            <li><img src="imgs/notice1.png"></li>
+            <li><img src="imgs/notice2.png"></li>
+            <li><img src="imgs/notice3.png"></li>
+            <li><img src="imgs/notice4.png"></li>
+        </ul>
+    </div>
+<h2>공지사항</h2>
 <table>
 	<thead>
 		<tr>
@@ -28,7 +40,7 @@
     <tbody>
         <tr>
             <td>1</td>
-            <td>내용이 긴 제목</td>
+            <td><a href="detail.jsp">내용이 긴 제목이라서 계속해서 제목이 있는데 이것이 모바일에서 줄어 보일지?</a></td>
             <td>박재현</td>
             <td>2023-02-06</td>
             <td>0</td>
@@ -43,6 +55,6 @@
     </tbody>
 </table>
 </div>
-<jsp:include page="template/footer.jspf"/>
+<%@ include file="template/footer.jsp"%>
 </body>
 </html>

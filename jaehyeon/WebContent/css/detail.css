@@ -1,0 +1,38 @@
+@media screen and (max-width: 600px){
+	table,td{
+		border-collapse: collapse;
+		border: 1px solid black;
+	}
+	table{
+		width: 400px;
+	}
+	td{
+		height: 30px;
+	}
+	table>tbody>tr>td>a{
+		text-decoration: none;
+		color:black;
+	}
+	table>tbody>tr>td>a:hover{
+		color:dodgerblue;
+	}
+}
+@media screen and (min-width: 601px){
+	table,td{
+		border-collapse: collapse;
+		border: 1px solid black;
+	}
+	table{
+		width: 800px;
+	}
+	td{
+		height: 30px;
+	}
+	table>tbody>tr>td>a{
+		text-decoration: none;
+		color:black;
+	}
+	table>tbody>tr>td>a:hover{
+		color:dodgerblue;
+	}
+}
