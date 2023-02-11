@@ -1,0 +1,105 @@
+#header {
+	width: 1000px;
+	margin: 0px auto;
+}
+
+#header>div {
+	width: 30%;
+	float: right;
+}
+
+#header>div>a {
+	float: right;
+}
+
+#header #headLogin {
+	text-decoration: none;
+	padding-top: 5px;
+}
+
+#menu {
+	background-color: grey;
+	height: 35px;
+}
+
+#menu>ul {
+	overflow: hidden;
+	list-style: none;
+	padding: 0px;
+	width: 560px;
+	margin: 0px auto;
+}
+
+#menu>ul>li {
+	width: 100px;
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#menu>ul>li>a {
+	height: 35px;
+	color: white;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	line-height: 35px;
+}
+
+#menu>ul>li>a:hover{
+	background-color: red;
+}
+
+#menu>ul>li>ol {
+	position: relative;
+	z-index: 9999;
+	top: 0px;
+	left: 0px;
+	width: 100px;
+	height: 300px;
+	list-style: none;
+	padding: 0px;
+	opacity: 0;
+	background-color: red;
+}
+
+#menu>ul>li>ol>li>ol {
+	position: absolute;
+	z-index: 9999;
+	top: 0px;
+	left:-9999px;
+	width: 0px;
+	height: 0px;
+	list-style: none;
+	padding: 0px;
+	opacity: 0;
+	background-color: yellow;
+}
+
+
+#menu>ul>li>ol>li>a {
+	display: block;
+	color: #333;
+	text-decoration: none;
+	text-align: center;
+	padding-top: 50px;
+}
+
+#content {
+	min-height: 500px;
+	width: 1000px;
+	margin: 0px auto;
+	margin-top: 40px;
+}
+
+#outfooter {
+	height: 100px;
+	width: 100%;
+	background-color: gray;
+}
+
+#infooter {
+	width: 1000px;
+	margin: 0px auto;
+}
