@@ -68,7 +68,6 @@ $(function() {
 	<jsp:include page="template/header.jsp">
 				<jsp:param value="." name="path"/>
 	</jsp:include>
-	<jsp:include page="template/menu.jsp"></jsp:include>
 		<div id="content">
 		<div class="bx">
 			<ul>
