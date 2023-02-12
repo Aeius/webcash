@@ -1,13 +1,23 @@
+-- 유저
 create table user(
-    num int primary key auto_increament,
-    id varchar(10) not null unique,
+    id int primary key,
     pw varchar(200) not null,
     job varchar(2) not null unique check(job in("학생", "교수"));
-    kor tinyint not null check(kor < 0 and kor > 100),
-    eng tinyint not null check(eng < 0 and eng > 100),
-    math tinyint not null check(math < 0 and math > 100),
 );
 
+-- 과목
+create table subject(
+    num int primary key auto_increment,
+    name varchar(20) not null unique
+);
+
+-- 성적
+create table achieve(
+    user_id int not null,
+    subject_name
+);
+
+-- 공지사항
 create table notice(
     num int primary key auto_increment,
     sub varchar(50) not null,
@@ -16,11 +26,13 @@ create table notice(
     
 );
 
+-- 정정 요청 게시판
 create table correction(
 	num int primary key auto_increment,
 	sub varchar(50) not null,
 	content varchar(1000) not null,
 	ref int default 0,
 	lvl int default 0,
-	
+	ord int default num,
 );
+
