@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common2.css">
+    <link rel="stylesheet" href="../css/member/edit.css">
+    <script src="../js/common/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $('#nav .menu')
+            .mouseenter(function(){
+                $(this).find('ul').animate({'opacity':'1','height':'100%'},300,'linear');
+            })
+            .mouseleave(function(){
+                $(this).find('ul').animate({'opacity':'0','height':'0px'},300,'linear');
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="header">
+        <h1>우리 동네 JMT</h1>
+        <div></div>
+    </div>
+    <div id="nav">
+        <ul>
+            <li>
+                <a href="#" class="active">홈</a>
+            </li>
+            <li class="menu">
+                <a href="../member/index.html">회원 목록</a>
+                <ul>
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                </ul>
+            </li>
+            <li class="menu">
+                <a href="./">맛집 목록</a>
+                <ul>
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                </ul>
+            </li>
+            <li class="menu">
+                <a href="./">커뮤니티</a>
+                <ul>
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="contents">
+        <div id="main">
+            <div class="inputWrap">
+                <div class="title">
+                    <h2>회원 수정</h2>
+                </div>
+                <form action="./api/update.jsp" method="post">
+                    <div class="inputGroup">
+                        <div class="inputForm">
+                            <label for="m_id">ID</label>
+                            <input type="text" name="m_id" id="m_id" readonly />
+                        </div>
+                        <div class="inputForm">
+                            <label for="name">이름</label>
+                            <input type="text" name="name" id="name" />
+                        </div>
+                        <div class="inputForm">
+                            <label for="password">비밀번호</label>
+                            <input type="password" name="password" id="password" />
+                        </div>
+                        <div class="inputForm">
+                            <label for="password_re">비밀번호 확인</label>
+                            <input type="password" name="password_re" id="password_re" />
+                        </div>
+                        <div class="inputForm">
+                            <label for="email">이메일</label>
+                            <input type="email" name="email" id="email" />
+                        </div>
+                        <div class="selectForm">
+                            <label for="age">나이</label>
+                            <select name="age" id="age">
+                            	<option value="<%=i%>">8세</option>
+                            </select>
+                        </div>
+                        <div class="radioForm">
+                            <label>성별</label>
+                            <div class="radioGroup">
+                                <input type="radio" name="gender" id="gender_M" value="M" checked />
+                                <label for="gender_M">남자</label>
+                                <input type="radio" name="gender" id="gender_F" value="F" />
+                                <label for="gender_F">여자</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttonGroup">
+                        <button type="submit">수정</button>
+                        <button type="button" onclick="location.href='./'">뒤로가기</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>

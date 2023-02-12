@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common2.css">
+    <link rel="stylesheet" href="../css/member/add.css">
+</head>
+<body>
+    <div id="header">
+        <h1>우리 동네 JMT</h1>
+        <div></div>
+    </div>
+    <div id="nav">
+        <ul>
+            <li><a href="#" class="active">홈</a></li>
+            <li><a href="../member/index.html">회원 목록</a></li>
+            <li><a href="./">맛집 목록</a></li>
+            <li><a href="./">커뮤니티</a></li>
+        </ul>
+    </div>
+    <div id="contents">
+        <div id="main">
+            <div class="inputWrap">
+                <div class="title">
+                    <h2>회원 추가</h2>
+                </div>
+                <form action="./api/insert.jsp" method="post">
+                    <div class="inputGroup">
+                        <div class="inputForm">
+                            <label for="m_id">ID</label>
+                            <input type="text" name="m_id" id="m_id" />
+                        </div>
+                        <div class="inputForm">
+                            <label for="password">비밀번호</label>
+                            <input type="password" name="password" id="password" />
+                        </div>
+                        <div class="inputForm">
+                            <label for="password_re">비밀번호 확인</label>
+                            <input type="password" name="password_re" id="password_re" />
+                        </div>
+                        <div class="inputForm">
+                            <label for="email">이메일</label>
+                            <input type="email" name="email" id="email" />
+                        </div>
+                        <div class="selectForm">
+                            <label for="age">나이</label>
+                            <select name="age" id="age">
+                                <option value="8">8세</option>
+                            </select>
+                        </div>
+                        <div class="radioForm">
+                            <label>성별</label>
+                            <div class="radioGroup">
+                                <input type="radio" name="gender" id="gender_M" value="M" checked />
+                                <label for="gender_M">남자</label>
+                                <input type="radio" name="gender" id="gender_F" value="F" />
+                                <label for="gender_F">여자</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttonGroup">
+                        <button type="submit">등록</button>
+                        <button type="button" onclick="location.href='./index.html'">뒤로가기</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>

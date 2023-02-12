@@ -1,0 +1,190 @@
+#main{
+    height: inherit;
+}
+
+/*
+검색폼
+*/
+#main>.searchForm{
+    height:10%;
+    border: 1px solid var(--border-line-color);
+    margin-top: 3%;
+    border-radius: 5px;
+    position: relative;
+}
+.searchForm>div{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.searchForm>div>div{
+    float: left;
+}
+.searchForm .select>select{
+    height: 30px;
+    margin: 3px;
+    width: 50px;
+    text-align: center;
+}
+.searchForm .input>input{
+    height: 30px;
+    margin: 3px;
+    width: 300px;
+    text-align: center;
+}
+.searchForm .button>button{
+    width: 100px;
+    height: 40px;
+    background-color: var(--theme-color);
+    border: unset;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/*
+테이블
+*/
+#main>.dataTable{
+    height:72%;
+    border: 1px solid var(--border-line-color);
+    margin-top: 3%;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+.dataTable table{
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 5px;
+}
+.dataTable table,th,td{
+    border-bottom: 1px solid var(--border-line-color);
+    height: 30px;
+}
+.dataTable thead>tr>th{
+    background-color: var(--theme-color);
+    color: white;
+}
+.dataTable tbody>tr{
+    text-align: center;
+}
+.dataTable tbody>tr{
+    text-align: center;
+}
+.dataTable tbody>tr>td button{
+	width: 22px;
+    height: 22px;
+    margin: 2px;
+    background-color: var(--theme-color);
+    border: unset;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/*
+버튼폼
+*/
+#main>.buttonForm{
+    height:5%;
+    margin-top: 2%;
+    position: relative;
+}
+.buttonGroup{
+    text-align: center;
+}
+.buttonGroup>button{
+    width: 100px;
+    height: 40px;
+    background-color: var(--theme-color);
+    border: unset;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/*
+페이지네이션
+*/
+#main>.pagination{
+    height:7%;
+    border: 1px solid var(--border-line-color);
+    margin-top: 3%;
+    border-radius: 5px;
+    position: relative;
+}
+.pagination>div{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.pagination>div>span{
+    margin: 0px 10px 0px 10px;
+}
+
+/*
+팝업
+*/
+#main>.popupForm{
+	position: absolute;
+    top: 0;
+    left: 0;	
+    display:none;
+}
+.popupForm>.popupWrap{
+	width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 999;
+    display: block;
+    backdrop-filter: blur(0px);
+    background-color: #ffffff00;
+    transition-duration: 0.5s;
+}
+.popupForm>.popupWrap>.popup{
+    width: 500px;
+    height: 200px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid var(--border-line-color);
+    box-shadow: 4px 4px 5px 2px #484646a8;
+}
+.popup>.popupHeader{
+    height: 10%;
+    text-align: right;
+}
+.popup>.popupHeader i{
+	padding: 5px;
+    font-size: 25px;
+}
+.popup>.popupMain{
+	width:100%;
+	height:65%;
+	text-align: center;
+}
+.popup>.popupMain p{
+	font-size: 18px;
+    line-height: 100px;
+}
+.popup>.popupFooter{
+    height:20%;
+    text-align:center;
+}
+.popup>.popupFooter button{
+    width: 100px;
+    height: 40px;
+    background-color: var(--theme-color);
+    border: unset;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}

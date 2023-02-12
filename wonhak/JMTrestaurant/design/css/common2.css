@@ -1,0 +1,93 @@
+/*
+사용자 설정 변수
+*/
+:root{
+    --theme-color:#fb3737;
+    --border-line-color:#9d9c9c;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+}
+
+/*
+header
+*/
+#header{
+    height: 10%;
+    box-shadow: 5px 5px 5px 5px #00000000;
+}
+#header>h1{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    text-indent: -9999px;
+}
+#header>div{
+    width: 100px;
+    height: 60px;
+    background-image: url('../imgs/logo.png');
+    background-size: 100%;
+    margin: 0 auto;
+}
+
+/*
+nav
+*/
+#nav{
+    width: 80%;
+    height: 5%;
+    margin: 0 auto;
+    line-height: 40px;
+}
+#nav>ul{
+    list-style: none;
+    text-align: center;
+}
+#nav>ul>li{
+    display: inline-grid;
+    margin: 0px 15px 0px 15px;
+}
+#nav>ul>li>a{
+    color: #ccc;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+#nav>ul>li>a.active{
+    color: black;
+}
+#nav .menu>ul{
+    height: 0px;
+    position: relative;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid var(--border-line-color);
+    margin-top: 8px;
+    z-index: 9999;
+    width: 129px;
+    box-shadow: 4px 4px 5px 2px #484646a8;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/*
+contents
+*/
+#contents{
+    width: 80%;
+    height: 70%;
+    margin: 0 auto;
+    border-top: 1px solid #9d9c9c;
+}
+#main{
+    margin: 50px;
+    font-weight: bold;
+}
