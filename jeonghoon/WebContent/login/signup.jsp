@@ -31,12 +31,13 @@
 	height: 15px;
 }
 </style>
+<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
 </head>
 <body>
-	<jsp:include page="../template/header.jsp">
-		<jsp:param value=".." name="path" />
+		<jsp:include page="../template/header.jsp">
+				<jsp:param value=".." name="path"/>
 	</jsp:include>
-	<jsp:include page="../template/menu.jsp"></jsp:include>
+
 	<div id="content">
 		<div></div>
 		<div>
