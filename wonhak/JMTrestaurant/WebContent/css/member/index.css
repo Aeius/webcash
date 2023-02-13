@@ -3,7 +3,7 @@
 }
 
 /*
-검색폼
+寃��깋�뤌
 */
 #main>.searchForm{
     height:10%;
@@ -45,7 +45,7 @@
 }
 
 /*
-테이블
+�뀒�씠釉�
 */
 #main>.dataTable{
     height:72%;
@@ -86,7 +86,7 @@
 }
 
 /*
-버튼폼
+踰꾪듉�뤌
 */
 #main>.buttonForm{
     height:5%;
@@ -108,7 +108,7 @@
 }
 
 /*
-페이지네이션
+�럹�씠吏��꽕�씠�뀡
 */
 #main>.pagination{
     height:7%;
@@ -125,10 +125,16 @@
 }
 .pagination>div>span{
     margin: 0px 10px 0px 10px;
+    color:#ddd;
+    cursor:pointer;
+}
+.pagination>div>span.active{
+    color:#000;
+    font-weight:bold;
 }
 
 /*
-팝업
+�뙘�뾽
 */
 #main>.popupForm{
 	position: absolute;

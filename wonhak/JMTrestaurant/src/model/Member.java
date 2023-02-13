@@ -1,6 +1,7 @@
 package model;
 
 public class Member {
+	private int num;
 	private String m_id;
 	private String name;
 	private String email;
@@ -8,6 +9,12 @@ public class Member {
 	private String gender;
 	private String reg_date;
 	
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
 	public String getM_id() {
 		return m_id;
 	}

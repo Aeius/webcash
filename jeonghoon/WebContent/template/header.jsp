@@ -3,7 +3,7 @@
      <%
     	String path = request.getParameter("path");
     %>
-    
+
 <script type="text/javascript" src="<%=path %>/js/menu.js"></script>
 
     <div id="header">
