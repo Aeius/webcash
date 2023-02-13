@@ -2,7 +2,7 @@
  * member - index.js
  */
  var xhr;
- var currentPageNum=0;
+ var currentPageNum=1;
  var countDataInPage=10;
  var countInPageGroup=5;
  var parameter="?currentPageNum="+currentPageNum+"&countDataInPage="+countDataInPage+"&countInPageGroup="+countInPageGroup;
@@ -38,6 +38,11 @@ function searchResult(){
 	getData();
 }
 
+function clickPage(PageNum){
+	currentPageNum=PageNum;
+	searchResult();
+}
+
 function getData(){
 	var tbody,tbodyHTML;
  	
@@ -50,10 +55,9 @@ function getData(){
  		 	var data = result.data;
  		 	var totalDataCount = result.totalDataCount;
  		 	
- 		 	var num=1;
  			for(value of data){
  				tbodyHTML+="<tr>";
- 				tbodyHTML+="<td>"+num+"</td>";
+ 				tbodyHTML+="<td>"+value.num+"</td>";
  				tbodyHTML+="<td>"+value.m_id+"</td>";
  				tbodyHTML+="<td>"+value.name+"</td>";
  				tbodyHTML+="<td>"+value.email+"</td>";
@@ -62,11 +66,29 @@ function getData(){
  				tbodyHTML+="<td>"+value.reg_date+"</td>";
  				tbodyHTML+="<td><button type=\"button\" onclick=\"location.href='/JMTrestaurant/pages/member/edit.jsp?m_id="+value.m_id+"'\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button><button type=\"button\" onclick=\"removeMember('"+value.m_id+"')\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></button></td>";
  				tbodyHTML+="</tr>";
- 				num++;
  			}
  			tbody.innerHTML=tbodyHTML;
  			
- 			console.log(totalDataCount/countInPageGroup);
+ 			var countTotalPage=Math.ceil(totalDataCount/countDataInPage);
+ 			var PageGroup = (Math.floor(currentPageNum/countInPageGroup));
+ 			if(PageGroup>0 && (Math.floor(currentPageNum%countInPageGroup))==0){
+ 				PageGroup-=1;
+ 			}
+ 			var startPageGroupNum = ((PageGroup)*countInPageGroup)+1;
+ 			var endPageGroupNum = startPageGroupNum+(countInPageGroup-1);
+ 			if(endPageGroupNum>=countTotalPage) endPageGroupNum=countTotalPage;
+ 			var pageGroupHTML='';
+ 			
+ 			if(endPageGroupNum>countInPageGroup) pageGroupHTML+='<span class="active" onclick="clickPage('+(startPageGroupNum-2)+')">이전</span>';
+ 			console.log('currentPageNum : '+currentPageNum,' PageGroup : '+PageGroup,' startPageGroupNum : '+startPageGroupNum,' endPageGroupNum : '+endPageGroupNum);
+ 			var activeClass='';
+ 			for(var i=startPageGroupNum;i<=endPageGroupNum;i++){
+ 				activeClass='';
+ 				if(currentPageNum==i) activeClass='active';
+ 				pageGroupHTML+='<span class="'+activeClass+'" onclick="clickPage('+i+')">'+i+'</span>';
+ 			}
+ 			if(endPageGroupNum<countTotalPage) pageGroupHTML+='<span class="active" onclick="clickPage('+(endPageGroupNum+1)+')">다음</span>';
+ 			document.getElementById('pageGroup').innerHTML=pageGroupHTML;	
  		}
  	};
  	xhr.open('get','/JMTrestaurant/pages/member/api/list.jsp'+parameter);
