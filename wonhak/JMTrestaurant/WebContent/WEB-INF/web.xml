@@ -3,10 +3,61 @@
   <display-name>JMTrestaurant</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!-- 맛집 목록 start -->
+  <servlet>
+  	<servlet-name>restaurant/list</servlet-name>
+  	<servlet-class>controller.restaurant.ListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>restaurant/list</servlet-name>
+  	<url-pattern>/restaurant/list.do</url-pattern>
+  </servlet-mapping>
+  <!-- 맛집 목록 end -->
+  
+  <!-- 맛집 추가 start -->
+  <servlet>
+  	<servlet-name>restaurant/add</servlet-name>
+  	<servlet-class>controller.restaurant.AddController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>restaurant/add</servlet-name>
+  	<url-pattern>/restaurant/add.do</url-pattern>
+  </servlet-mapping>
+  <!-- 맛집 추가 end -->
+  
+  <!-- 맛집 상세 start -->
+  <servlet>
+  	<servlet-name>restaurant/detail</servlet-name>
+  	<servlet-class>controller.restaurant.DetailController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>restaurant/detail</servlet-name>
+  	<url-pattern>/restaurant/detail.do</url-pattern>
+  </servlet-mapping>
+  <!-- 맛집 상세 end -->
+  
+  <!-- 맛집 수정 start -->
+  <servlet>
+  	<servlet-name>restaurant/edit</servlet-name>
+  	<servlet-class>controller.restaurant.EditController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>restaurant/edit</servlet-name>
+  	<url-pattern>/restaurant/edit.do</url-pattern>
+  </servlet-mapping>
+  <!-- 맛집 수정 end -->
+  
+  <!-- 맛집 삭제 start -->
+  <servlet>
+  	<servlet-name>restaurant/delete</servlet-name>
+  	<servlet-class>controller.restaurant.DeleteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>restaurant/delete</servlet-name>
+  	<url-pattern>/restaurant/delete.do</url-pattern>
+  </servlet-mapping>
+  <!-- 맛집 삭제 end -->
 </web-app>

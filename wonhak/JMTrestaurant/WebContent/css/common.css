@@ -55,13 +55,13 @@ nav
     display: inline-grid;
     margin: 0px 15px 0px 15px;
 }
-#nav>ul>li>a{
+#nav>ul>li>a, #nav>ul>li>ul>li>a{
     color: #ccc;
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
 }
-#nav>ul>li>a.active{
+#nav>ul>li>a.active, #nav>ul>li>ul>li>a.active{
     color: black;
 }
 #nav .menu>ul{

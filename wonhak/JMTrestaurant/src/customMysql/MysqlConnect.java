@@ -90,6 +90,27 @@ public class MysqlConnect {
 			sql+=")";
 			stmt = conn.createStatement();
 			stmt.execute(sql);
+			stmt.close();
+			
+			sql="CREATE TABLE IF NOT EXISTS restaurant(";
+			sql+="r_id int primary key auto_increment,";
+			sql+="m_id varchar(50) not null,";
+			sql+="name varchar(100) not null,";
+			sql+="addr text not null default(''),";
+			sql+="content text default(''),";
+			sql+="img1 text default(''),";
+			sql+="img2 text default(''),";
+			sql+="img3 text default(''),";
+			sql+="img4 text default(''),";
+			sql+="img5 text default(''),";
+			sql+="loc_x double not null default(0),";
+			sql+="loc_y double not null default(0),";
+			sql+="reg_date datetime not null default(now()),";
+			sql+="FOREIGN KEY (m_id) REFERENCES member(m_id) ON UPDATE CASCADE";
+			sql+=")";
+			stmt = conn.createStatement();
+			stmt.execute(sql);
+			stmt.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
