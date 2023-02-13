@@ -6,8 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../css/main.css">
-<link rel="stylesheet" type="text/css" href="../css/jquery.bxslider.min.css">
-
 <style type="text/css">
 </style>
 <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>

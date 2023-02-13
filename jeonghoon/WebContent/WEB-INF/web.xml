@@ -2,11 +2,39 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>nullproject</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <servlet>
+		<servlet-name>rev</servlet-name>
+		<servlet-class>com.nullp.controller.revController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>rev</servlet-name>
+		<url-pattern>/review/review.do</url-pattern>
+	</servlet-mapping>
+  <servlet>
+		<servlet-name>add</servlet-name>
+		<servlet-class>com.nullp.controller.AddController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>add</servlet-name>
+		<url-pattern>/review/add.do</url-pattern>
+	</servlet-mapping>
+  <servlet>
+		<servlet-name>detail</servlet-name>
+		<servlet-class>com.nullp.controller.DetailController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>detail</servlet-name>
+		<url-pattern>/review/detail.do</url-pattern>
+	</servlet-mapping>
+  <servlet>
+		<servlet-name>edit</servlet-name>
+		<servlet-class>com.nullp.controller.EditController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>edit</servlet-name>
+		<url-pattern>/review/edit.do</url-pattern>
+	</servlet-mapping>
 </web-app>
