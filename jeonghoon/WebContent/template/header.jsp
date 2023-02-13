@@ -3,6 +3,7 @@
      <%
     	String path = request.getParameter("path");
     %>
+
 <script type="text/javascript" src="<%=path %>/js/menu.js"></script>
 
     <div id="header">
@@ -33,7 +34,7 @@
 					</ol></li>
 			</ol></li>
 		<li><a href="<%=path %>/map/map.jsp">오시는길</a></li>
-		<li><a href="<%=path %>/review/review.jsp">고객후기</a></li>
+		<li><a href="<%=path %>/review/review.do">고객후기</a></li>
 		<li><a href="<%=path %>/myInfo/myInfo.jsp">내정보</a></li>
 	</ul>
 </div>
