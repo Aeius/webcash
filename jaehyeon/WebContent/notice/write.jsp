@@ -16,12 +16,13 @@
 <div class="content">
 <h1>공지 사항</h1>
 <h2>글 작성</h2>
-<form action="insert.jsp" method="post">
+<form action="write.do" method="post">
+<input type="hidden" name="userNum" value="1">
 <table> 
 	<tr>
 		<td>글제목</td>
 		<td>
-			<input type="text" name="sub">
+			<input type="text" name="title">
 		</td>
 	</tr>
 	<tr>

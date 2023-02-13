@@ -1,3 +1,4 @@
+<%@page import="com.bit.model.NoticeDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,29 +21,28 @@
 <form action="insert.jsp" method="post">
 <table> 
 	<tbody>
+	<%
+	NoticeDTO bean = (NoticeDTO)request.getAttribute("detail");
+	%>
 		<tr>
 			<td width="100px">제목</td>
-			<td>제목이 들어가는 자리 입니다.</td>
+			<td><%=bean.getTitle() %></td>
 		</tr>
 		<tr>
 			<td>작성자</td>
-			<td>박재현</td>
+			<td><%=bean.getUserName() %></td>
 		</tr>
 		<tr>
 			<td colspan="2">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sequi autem placeat nostrum est inventore assumenda. Repellendus quia esse tempora quis ipsum animi reprehenderit hic temporibus, repellat nobis autem quidem?
-			<br>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sequi autem placeat nostrum est inventore assumenda. Repellendus quia esse tempora quis ipsum animi reprehenderit hic temporibus, repellat nobis autem quidem?
-			<br>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sequi autem placeat nostrum est inventore assumenda. Repellendus quia esse tempora quis ipsum animi reprehenderit hic temporibus, repellat nobis autem quidem?
+			<%=bean.getContent() %>
 			</td>
 		</tr>
 		<tr>
 		</tr>
 		<tr>
 			<td colspan="2">
-				<a href="modify.jsp">[수정]</a>
-				<a href="delete.jsp">[삭제]</a>
+				<a href="modify.do?num=<%=bean.getNum()%>">[수정]</a>
+				<a href="delete.do?num=<%=bean.getNum()%>">[삭제]</a>
 			</td>
 		</tr>
 	</tbody>

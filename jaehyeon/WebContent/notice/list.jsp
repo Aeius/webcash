@@ -1,3 +1,5 @@
+<%@page import="com.bit.model.NoticeDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -27,20 +29,19 @@
 		</tr>
 	</thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td><a href="detail.jsp">내용이 긴 제목이라서 계속해서 내용을 적어봤는데 내용이 줄어서 보일지?</a></td>
-            <td>박재현</td>
-            <td>2023-02-06</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>내용이 긴 제목2</td>
-            <td>박재현2</td>
-            <td>2023-02-06</td>
-            <td>1</td>
-        </tr>
+		<%
+		List<NoticeDTO> list = null;
+		list = (List<NoticeDTO>)request.getAttribute("notice");
+		for(NoticeDTO bean : list){
+		%>
+		<tr>
+		    <td><a href="detail.do?num=<%=bean.getNum() %>"><%=bean.getNum() %></a></td>
+		    <td><a href="detail.do?num=<%=bean.getNum() %>"><%=bean.getTitle() %></a></td>
+		    <td><a href="detail.do?num=<%=bean.getNum() %>"><%=bean.getUserName() %></a></td>
+		    <td><a href="detail.do?num=<%=bean.getNum() %>"><%=bean.getDate() %></a></td>
+		    <td><a href="detail.do?num=<%=bean.getNum() %>"><%=bean.getCnt() %></a></td>
+		</tr>
+		<% }%>
     </tbody>
 </table>
 	<div id="pagination">
@@ -60,7 +61,7 @@
   		</select>
   		<input type="text" name="search">
   		<button type="submit">검색</button>
-  		<a href="write.jsp">글작성</a>
+  		<a href="write.do">글작성</a>
     </div>
 </div>
 <%@ include file="../template/footer.jsp"%>
