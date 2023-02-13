@@ -1,5 +1,5 @@
 /**
- * member - index.js
+ * restaurant - index.js
  */
  var xhr;
  var currentPageNum=1;
@@ -17,14 +17,14 @@
  	 };
  };
  
-function removeData(m_id){
+function removeData(r_id){
 	document.querySelector('#main .popupForm').style.display='block';
 	document.querySelector('#main .popupWrap').style.backdropFilter='blur(2px)';
 	document.querySelector('#main .popupWrap').style.backgroundColor='#ffffff61';
 	
 	var removeButton=document.createElement('button');
 	removeButton.innerText="삭제";
-	removeButton.setAttribute("onclick","location.href='/JMTrestaurant/pages/member/api/delete.jsp?m_id="+m_id+"'");
+	removeButton.setAttribute("onclick","location.href='/JMTrestaurant/restaurant/delete.do?r_id="+r_id+"'");
 	
 	if(document.querySelector('#main .popupWrap .popupFooter').children.length>0) document.querySelector('#main .popupWrap .popupFooter').firstElementChild.remove();
 	document.querySelector('#main .popupWrap .popupFooter').append(removeButton);
@@ -58,13 +58,11 @@ function getData(){
  			for(value of data){
  				tbodyHTML+="<tr>";
  				tbodyHTML+="<td>"+value.num+"</td>";
+ 				tbodyHTML+="<td><a href='./detail.do?r_id="+value.r_id+"'>"+value.name+"</a></td>";
+ 				tbodyHTML+="<td>"+value.addr+"</td>";
  				tbodyHTML+="<td>"+value.m_id+"</td>";
- 				tbodyHTML+="<td>"+value.name+"</td>";
- 				tbodyHTML+="<td>"+value.email+"</td>";
- 				tbodyHTML+="<td>"+value.age+"</td>";
- 				tbodyHTML+="<td>"+value.gender+"</td>";
  				tbodyHTML+="<td>"+value.reg_date+"</td>";
- 				tbodyHTML+="<td><button type=\"button\" onclick=\"location.href='/JMTrestaurant/pages/member/edit.jsp?m_id="+value.m_id+"'\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button><button type=\"button\" onclick=\"removeData('"+value.m_id+"')\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></button></td>";
+ 				tbodyHTML+="<td><button type=\"button\" onclick=\"location.href='/JMTrestaurant/restaurant/edit.do?r_id="+value.r_id+"'\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button><button type=\"button\" onclick=\"removeData('"+value.r_id+"')\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></button></td>";
  				tbodyHTML+="</tr>";
  			}
  			tbody.innerHTML=tbodyHTML;
@@ -91,6 +89,6 @@ function getData(){
  			document.getElementById('pageGroup').innerHTML=pageGroupHTML;	
  		}
  	};
- 	xhr.open('get','/JMTrestaurant/pages/member/api/list.jsp'+parameter);
+ 	xhr.open('post','/JMTrestaurant/restaurant/list.do'+parameter);
  	xhr.send();
 }
