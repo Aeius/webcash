@@ -66,17 +66,7 @@ try{
 }
 %>
 {
-	"data":[
-	<%
-	for(int i=0;i<result.size();i++){
-		Member member=result.get(i);
-	%>
-	{"num":"<%=member.getNum() %>","m_id":"<%=member.getM_id() %>","name":"<%=member.getName() %>","email":"<%=member.getEmail() %>","age":"<%=member.getAge() %>","gender":"<%=member.getGender() %>","reg_date":"<%=member.getReg_date() %>"}
-	<%
-	if(i!=result.size()-1) out.print(",");
-	}
-	%>
-	],
+	"data":<%=result.toString()%>,
 	"totalDataCount":<%=totalDataCount%>
 }
 <%!

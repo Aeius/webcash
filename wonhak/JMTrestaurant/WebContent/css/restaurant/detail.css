@@ -57,6 +57,11 @@
 .inputWrap .inputGroup .radioForm>.radioGroup>input+label{
     margin-right: 35px;
 }
+.inputWrap .inputGroup .imgViewForm img{
+	display:block;
+   	width:100%;
+}
+
 
 /*
 버튼 그룹

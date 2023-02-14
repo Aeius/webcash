@@ -190,22 +190,30 @@ public class RestaurantDao {
 	
 	public int updateData(int r_id, String m_id, String name, String addr, String content, String img1,
 			String img2,String img3,String img4,String img5,double loc_x,double loc_y) {
-		String sql="update restaurant set m_id=?, name=?, addr=?, content=?, img1=?, img2=?, img3=?, img4=?, img5=?, loc_x=?, loc_y=?, reg_date=now() where r_id=?";
+		String sql="update restaurant set m_id=?, name=?, addr=?, content=?, loc_x=?, loc_y=?";
+		if(img1!=null) sql+=", img1=?";
+		if(img2!=null) sql+=", img2=?";
+		if(img3!=null) sql+=", img3=?";
+		if(img4!=null) sql+=", img4=?";
+		if(img5!=null) sql+=", img5=?";
+		sql+=", reg_date=now() where r_id=?";
 		int resultNumber=0;
 		try {
+			int idx=1;
+			
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1,m_id);
-			pstmt.setString(2,name);
-			pstmt.setString(3,addr);
-			pstmt.setString(4,content);
-			pstmt.setString(5,img1);
-			pstmt.setString(6,img2);
-			pstmt.setString(7,img3);
-			pstmt.setString(8,img4);
-			pstmt.setString(9,img5);
-			pstmt.setDouble(10,loc_x);
-			pstmt.setDouble(11,loc_y);
-			pstmt.setDouble(12,r_id);
+			pstmt.setString(idx++,m_id);
+			pstmt.setString(idx++,name);
+			pstmt.setString(idx++,addr);
+			pstmt.setString(idx++,content);
+			pstmt.setDouble(idx++,loc_x);
+			pstmt.setDouble(idx++,loc_y);
+			if(img1!=null) pstmt.setString(idx++,img1);
+			if(img2!=null) pstmt.setString(idx++,img2);
+			if(img3!=null) pstmt.setString(idx++,img3);
+			if(img4!=null) pstmt.setString(idx++,img4);
+			if(img5!=null) pstmt.setString(idx++,img5);
+			pstmt.setDouble(idx++,r_id);
 						
 			resultNumber=pstmt.executeUpdate();
 		} catch (SQLException e) {

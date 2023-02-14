@@ -103,8 +103,8 @@ public class Restaurant {
 	
 	@Override
 	public String toString() {
-		return "Restaurant [r_id=" + r_id + ", m_id=" + m_id + ", name=" + name + ", addr=" + addr + ", content="
-				+ content + ", img1=" + img1 + ", img2=" + img2 + ", img3=" + img3 + ", img4=" + img4 + ", img5=" + img5
-				+ ", loc_x=" + loc_x + ", loc_y=" + loc_y + ", reg_date=" + reg_date + "]";
+		return "{ \"num\":"+num+", \"r_id\":" + r_id + ", \"m_id\":\"" + m_id + "\", \"name\":\"" + name + "\", \"addr\":\"" + addr + "\", \"content\":\""
+				+ content + "\", \"img1\":\"" + img1 + "\", \"img2\":\"" + img2 + "\", \"img3\":\"" + img3 + "\", \"img4\":\"" + img4 + "\", \"img5\":\"" + img5
+				+ "\", \"loc_x\":\"" + loc_x + "\", \"loc_y\":\"" + loc_y + "\", \"reg_date\":\"" + reg_date + "\"}";
 	}
 }
