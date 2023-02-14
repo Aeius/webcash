@@ -14,7 +14,7 @@
                 <div class="title">
                     <h2>맛집 수정</h2>
                 </div>
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
                 <%
                 int r_id=Integer.parseInt(request.getParameter("r_id"));
                 %>

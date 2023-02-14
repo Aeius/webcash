@@ -34,6 +34,11 @@
     font-size: 18px;
     text-indent: 10px;
 }
+.inputWrap .inputGroup .inputForm>img{
+    width:100%;
+    margin-top:20px;
+    
+}
 .inputWrap .inputGroup .selectForm>label{
     float: left;
 }
