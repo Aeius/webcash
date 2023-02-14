@@ -1,3 +1,5 @@
+<%@page import="com.bit.model.CorrectionDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -27,20 +29,18 @@
 		</tr>
 	</thead>
     <tbody>
+    <%
+    List<CorrectionDTO> list = (List<CorrectionDTO>)request.getAttribute("correction");
+    for(CorrectionDTO bean : list){
+    %>
         <tr>
-            <td>1</td>
-            <td><a href="detail.jsp">내용이 긴 제목</a></td>
-            <td>박재현</td>
-            <td>2023-02-06</td>
-            <td>0</td>
+            <td><a href="detail.do?num=<%=bean.getNum()%>"><%=bean.getNum() %></a></td>
+            <td><a href="detail.do?num=<%=bean.getNum()%>"><%=bean.getTitle() %></a></td>
+            <td><a href="detail.do?num=<%=bean.getNum()%>"><%=bean.getUserName() %></a></td>
+            <td><a href="detail.do?num=<%=bean.getNum()%>"><%=bean.getDate() %></a></td>
+            <td><a href="detail.do?num=<%=bean.getNum()%>"><%=bean.getCnt() %></a></td>
         </tr>
-        <tr>
-            <td>2</td>
-            <td><a href="detail.jsp"> └re:내용이 긴 제목2</a></td>
-            <td>박재현2</td>
-            <td>2023-02-06</td>
-            <td>1</td>
-        </tr>
+     <%} %>
     </tbody>
 </table>
 	<div id="pagination">

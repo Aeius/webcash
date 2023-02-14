@@ -81,12 +81,14 @@
 	}
 	.content>table>tbody>tr>td{
 	    text-align: center;
+	    height: 35px;
+	    line-height: 35px;
 	}
 	.content>table>tbody>tr>td:nth-child(1){
 	    width: 55px;
 	}
 	.content>table>tbody>tr>td:nth-child(2){
-		width: 140px;
+		width: 300px;
 	    text-align: left;
 	    overflow: hidden;
 	    text-overflow:ellipsis;	
@@ -94,17 +96,15 @@
 		-webkit-line-clamp: 1; /* 라인수 */
 	    -webkit-box-orient: vertical;
 	    word-wrap:break-word; 
-	    line-height: 1.2em;
-	    height: 1.2em
 	}
 	.content>table>tbody>tr>td:nth-child(3){
 	    width:58px;
 	}
-	.content>table>tbody>tr>td:nth-child(4){
-	    width:95px;
-	}
+	.content>table>thead>tr>th:nth-child(4),
+	.content>table>tbody>tr>td:nth-child(4),
+	.content>table>thead>tr>th:nth-child(5),
 	.content>table>tbody>tr>td:nth-child(5){
-	    width:55px;
+	    display: none;
 	}
 	.content>table>tbody>tr>td>a{
 		text-decoration: none;
@@ -113,6 +113,33 @@
 	.content>table>tbody>tr>td>a:hover{
 		text-decoration: none;
 		color: dodgerblue;
+	}
+	.content>div{
+		width: 80%;
+	}
+	.content>div>.title{
+		display: inline-block;
+		width: 400px;
+		border: 1px solid gray;
+		text-align: center;
+		background-color: dodgerblue;
+		color: white;
+	}
+	.content>div>.title>div{
+		float: left;
+		width: 200px;
+	
+	}
+	.content>div>.article{
+		display: inline-block;
+		width: 400px;
+		text-align: center;
+		padding: 0px;
+		margin: 0px;
+	}
+	.content>div>.article>div{
+		float: left;
+		width: 200px;
 	}
 	#pagination{
 		width: 200px;
@@ -218,6 +245,8 @@
 	}
 	.content>table>tbody>tr>td{
 	    text-align: center;
+	    height: 35px;
+	    line-height: 35px;
 	}
 	.content>table>tbody>tr>td:nth-child(1){
 	    width: 100px;
@@ -240,6 +269,60 @@
 	}
 	.content>table>tbody>tr>td>a:hover{
 		text-decoration: none;
+		color: dodgerblue;
+	}
+	.content>div{
+		width: 80%;
+	}
+	.content>div>.title{
+		display: inline-block;
+		width: 100%;
+		height: 35px;
+		line-height: 35px;
+		border: 1px solid gray;
+		text-align: center;
+		background-color: dodgerblue;
+		color: white;
+	}
+	.content>div>.title>div{
+		float: left;
+		width: 50%;
+	
+	}
+	.content>div>.article{
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		padding: 0px;
+		margin: 0px;
+	}
+	.content>div>.article>div{
+		float: left;
+		width: 50%;
+		height: 35px;
+		line-height: 35px;
+		font-size: 15pt;
+	}
+	#pagination{
+		width: 200px;
+		margin: 5px auto;
+	}
+	#pagination>a{
+		color: black;
+		text-decoration: none;
+	}
+	#pagination>a:hover{
+		color: dodgerblue;
+	}
+	#search{
+		width: 350px;
+		margin: 5px auto;
+	}
+	#search>a{
+		color: black;
+		text-decoration: none;
+	}
+	#search>a:hover{
 		color: dodgerblue;
 	}
 	.footer{

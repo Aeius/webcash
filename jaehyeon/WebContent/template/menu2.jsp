@@ -5,7 +5,7 @@
     <ul>
         <li><a href="../notice/list.do">공지 사항</a></li>
         <li><a href="../correction/list.do">정정 요청</a></li>
-        <li><a href="../student/list.do">나의 성적</a></li>
+        <li><a href="../student/list.do?num=20230201">나의 성적</a></li>
         <li><a href="../teacher/list.do">성적 관리</a></li>
     </ul>
 </div>

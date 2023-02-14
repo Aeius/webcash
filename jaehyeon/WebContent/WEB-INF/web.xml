@@ -58,4 +58,67 @@
   	<servlet-name>noticeDelete</servlet-name>
   	<url-pattern>/notice/delete.do</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>correction</servlet-name>
+  	<servlet-class>com.bit.controller.CorrectionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>correction</servlet-name>
+  	<url-pattern>/correction/list.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>correctionDetail</servlet-name>
+  	<servlet-class>com.bit.controller.CorrectionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>correctionDetail</servlet-name>
+  	<url-pattern>/correction/detail.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>correctionWrite</servlet-name>
+  	<servlet-class>com.bit.controller.CorrectionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>correctionWrite</servlet-name>
+  	<url-pattern>/correction/write.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>correctionModify</servlet-name>
+  	<servlet-class>com.bit.controller.CorrectionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>correctionModify</servlet-name>
+  	<url-pattern>/correction/modify.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>correctionDelete</servlet-name>
+  	<servlet-class>com.bit.controller.CorrectionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>correctionDelete</servlet-name>
+  	<url-pattern>/correction/delete.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>correctionReply</servlet-name>
+  	<servlet-class>com.bit.controller.CorrectionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>correctionReply</servlet-name>
+  	<url-pattern>/correction/reply.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>student</servlet-name>
+  	<servlet-class>com.bit.controller.StudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>student</servlet-name>
+  	<url-pattern>/student/list.do</url-pattern>
+  </servlet-mapping>
 </web-app>
