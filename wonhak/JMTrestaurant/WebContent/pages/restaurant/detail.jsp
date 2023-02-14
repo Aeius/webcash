@@ -41,6 +41,9 @@
                             <label for="loc_y">맛집 위치(y 좌표)</label>
                             <input type="number" name="loc_y" id="loc_y" readonly />
                         </div>
+                        <div class="imgViewForm">
+                        	
+                        </div>
                     </div>
                     <div class="buttonGroup">
                         <button type="button" onclick="location.replace('./edit.do?r_id=<%=r_id %>')">수정</button>

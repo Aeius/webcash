@@ -37,10 +37,8 @@ public class DetailController extends HttpServlet {
 		
 		String jsonStr="";
 		jsonStr+="{";
-		jsonStr+="\"data\":{";
-		jsonStr+="\"r_id\":\""+restaurant.getR_id()+"\",\"m_id\":\""+restaurant.getM_id()+"\",\"name\":\""
-				+restaurant.getName()+"\",\"addr\":\""+restaurant.getAddr()+"\",\"content\":\""
-				+restaurant.getContent()+"\",\"reg_date\":\""+restaurant.getReg_date()+"\"}";
+		jsonStr+="\"data\":";
+		jsonStr+=restaurant.toString();
 		jsonStr+="}";
 		
 		PrintWriter out = resp.getWriter();

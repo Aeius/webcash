@@ -14,7 +14,7 @@
                 <div class="title">
                     <h2>맛집 추가</h2>
                 </div>
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
                 	<input type="hidden" name="m_id" value="test11" />
                     <div class="inputGroup">
                         <div class="inputForm">

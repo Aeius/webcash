@@ -51,6 +51,9 @@ public class Member {
 	public void setReg_date(String reg_date) {
 		this.reg_date = reg_date;
 	}
-	
-	
+	@Override
+	public String toString() {
+		return "{\"num\":" + num + ", \"m_id\":\"" + m_id + "\", \"name\":\"" + name + "\", \"email\":\"" + email + "\", \"age\":" + age
+				+ ", \"gender\":\"" + gender + "\", \"reg_date\":\"" + reg_date + "\"}";
+	}
 }

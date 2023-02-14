@@ -41,15 +41,9 @@ public class ListController extends HttpServlet {
 		
 		String jsonStr="";
 		jsonStr+="{";
-		jsonStr+="\"data\":[";
-		for(int i=0;i<list.size();i++) {
-			Restaurant restaurant=list.get(i);
-			jsonStr+="{\"num\":\""+restaurant.getNum()+"\",\"r_id\":\""+restaurant.getR_id()+"\",\"m_id\":\""+restaurant.getM_id()+"\",\"name\":\""
-					+restaurant.getName()+"\",\"addr\":\""+restaurant.getAddr()+"\",\"content\":\""
-					+restaurant.getContent()+"\",\"reg_date\":\""+restaurant.getReg_date()+"\"}";
-		if(i!=list.size()-1) jsonStr+=",";
-		}
-		jsonStr+="],";
+		jsonStr+="\"data\":";
+		jsonStr+=list.toString();
+		jsonStr+=",";
 		jsonStr+="\"totalDataCount\":"+totalDataCount;
 		jsonStr+="}";
 		
