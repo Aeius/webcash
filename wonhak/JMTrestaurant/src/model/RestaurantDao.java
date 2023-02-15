@@ -29,7 +29,7 @@ public class RestaurantDao {
 		String sqlWhere=" where 1=1 ";
 		if(!searchColumn.equals("") && !searchValue.equals("")) sqlWhere+="and ? like ? ";
 		
-		int startPage = startPage = currentPageNum*countDataInPage;
+		int startPage = currentPageNum*countDataInPage;
 		String sql="select * from (select rest.*, @rownum:=@rownum+1 as num from restaurant rest, (select @rownum:=0 from dual) a "+sqlWhere+") b order by num asc limit "+startPage+", "+countDataInPage;
 		log.info(sql);
 		ArrayList<Restaurant> list = new ArrayList<Restaurant>();

@@ -1,3 +1,11 @@
+/*
+사용자 설정 변수
+*/
+:root{
+    --theme-color:#fb3737;
+    --border-line-color:#9d9c9c;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -6,14 +14,16 @@
 body{
     width: 100vw;
     height: 100vh;
-    background-color: #ffcccc;
+    background-color: #fff;
+    overflow-x: hidden;
 }
 
 /*
 header
 */
 #header{
-    height: 10%;
+    height: 23%;
+    box-shadow: 5px 5px 5px 5px #00000000;
 }
 #header>h1{
     position: absolute;
@@ -22,69 +32,65 @@ header
     text-indent: -9999px;
 }
 #header>div{
-    position: absolute;
-    top: 2%;
-    left: 2%;
-    width: 100px;
-    height: 60px;
+    width: 100%;
+    height: 100%;
     background-image: url('../imgs/logo.png');
-    background-size: 100%;
+    background-size: 400px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin: 0 auto;
 }
 
 /*
 nav
 */
 #nav{
-    width: 13%;
-    height: 86%;
-    float: left;
-    background-color: #fffce4;
-    box-shadow: 5px 5px 5px 5px #00000085;
-    position: relative;
-    left: 2%;
-    border-radius: 5px;
+    width: 80%;
+    height: 5%;
+    margin: 0 auto;
+    line-height: 40px;
 }
 #nav>ul{
     list-style: none;
-    margin-top: 80px;
     text-align: center;
 }
 #nav>ul>li{
-    margin-top: 50px;
+    display: inline-grid;
+    margin: 0px 15px 0px 15px;
 }
-#nav>ul>li>a{
+#nav>ul>li>a, #nav>ul>li>ul>li>a{
     color: #ccc;
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
 }
-#nav>ul>li>a.active{
+#nav>ul>li>a.active, #nav>ul>li>ul>li>a.active{
     color: black;
+}
+#nav .menu>ul{
+    height: 0px;
+    position: relative;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid var(--border-line-color);
+    margin-top: 8px;
+    z-index: 9999;
+    width: 129px;
+    box-shadow: 4px 4px 5px 2px #484646a8;
+    opacity: 0;
+    overflow: hidden;
 }
 
 /*
 contents
 */
 #contents{
-    width: 81%;
-    height: 86%;
-    margin-left: 2%;
-    float: right;
-    background-color: #fffce4;
-    box-shadow: 5px 5px 5px 5px #00000085;
-    position: relative;
-    right: 2%;
-    border-radius: 5px;
+    width: 80%;
+    height: 70%;
+    margin: 0 auto;
+    border-top: 1px solid #9d9c9c;
 }
 #main{
     margin: 50px;
     font-weight: bold;
-}
-
-/*
-footer
-*/
-#footer{
-    height: 4%;
-    clear:both;
 }

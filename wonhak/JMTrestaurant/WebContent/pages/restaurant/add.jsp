@@ -2,9 +2,12 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<head>
     <jsp:include page="/pages/templates/head.jsp">
         <jsp:param value="restaurant/add" name="pageName" />
     </jsp:include> 
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8fdc102fec7c743e98f39b3ed2466a1c"></script>
+</head>
 <body>
 	<jsp:include page="/pages/templates/header.jsp"></jsp:include> 
 	<jsp:include page="/pages/templates/nav.jsp"></jsp:include> 
@@ -30,31 +33,31 @@
                             <input type="text" name="content" id="content" />
                         </div>
                         <div class="inputForm">
-                            <label for="loc_x">맛집 위치(x 좌표)</label>
-                            <input type="number" name="loc_x" id="loc_x" />
+                            <label>맛집 위치 지정</label>
+                            <div id="map" class="mapContainer">
+	        						
+	        				</div>
+                            <input type="hidden" name="loc_x" id="loc_x" value="0" />
+                            <input type="hidden" name="loc_y" id="loc_y" value="0" />
                         </div>
                         <div class="inputForm">
-                            <label for="loc_y">맛집 위치(y 좌표)</label>
-                            <input type="number" name="loc_y" id="loc_y" />
-                        </div>
-                        <div class="inputForm">
-                            <label for="img1">사진1</label>
+                            <label for="img1">메인 사진</label>
                             <input type="file" name="img1" id="img1" />
                         </div>
                         <div class="inputForm">
-                            <label for="img2">사진2</label>
+                            <label for="img2">상세 사진1</label>
                             <input type="file" name="img2" id="img2" />
                         </div>
                         <div class="inputForm">
-                            <label for="img3">사진3</label>
+                            <label for="img3">상세 사진2</label>
                             <input type="file" name="img3" id="img3" />
                         </div>
                         <div class="inputForm">
-                            <label for="img4">사진4</label>
+                            <label for="img4">상세 사진3</label>
                             <input type="file" name="img4" id="img4" />
                         </div>
                         <div class="inputForm">
-                            <label for="img5">사진5</label>
+                            <label for="img5">상세 사진4</label>
                             <input type="file" name="img5" id="img5" />
                         </div>
                     </div>
