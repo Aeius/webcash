@@ -10,7 +10,6 @@
 <title>Insert title here</title>
 <%
 request.setCharacterEncoding("UTF-8");
-String root = request.getContextPath();
 String subName = request.getParameter("subName");
 %>
 <link href="../css/mycss.css" rel="stylesheet">
@@ -103,6 +102,116 @@ String subName = request.getParameter("subName");
 	font-size: 20px;
 }
 </style>
+</head>
+<body>
+<%@ include file="../template/header.jsp" %>
+<%@ include file="../template/menu2.jsp" %>
+
+<div class="content">
+<h1>학생 성적 관리 웹사이트(ver 0.7.0)</h1>
+<h2>학생 성적 관리</h2>
+<p>과목
+	<select id="subject">
+		<option>과목 선택</option>
+	<%
+	request.setCharacterEncoding("UTF-8");
+	List<SubjectDTO> subject = (List<SubjectDTO>)request.getAttribute("subject");
+	String sub = request.getParameter("subName");
+	for(SubjectDTO bean : subject){
+	%>
+		<option value="<%=bean.getName()%>"><%=bean.getName() %></option>
+	<%} %>
+	</select>
+	<button class="modal1-on">추가</button>
+	<button class="modal3-on">삭제</button>
+	<span style="float:right">
+		<button class="modal2-on">성적등록</button>
+	</span>
+</p>
+<table>
+	<thead>
+		<tr>
+			<th>학번</th>
+			<th>이름</th>
+			<th>점수</th>
+			<th></th>
+		</tr>
+	</thead>
+    <tbody>
+        <tr>
+        	<td colspan="4">
+        		<h4>과목을 선택해주세요</h4>
+        	</td>
+    	</tr>
+    </tbody>
+</table>
+</div>
+<div class="modal1">
+	<div class="modal-body1">
+		<button class="modal1-off">X</button>
+		<div>과목 추가</div>
+		<form action="addSub.do" method="post">
+		<input type="text" name="sub" id="sub">
+		<button>등록</button>
+		<button class="modal1-off" type="button">취소</button>
+		</form>
+	</div>
+</div>
+<div class="modal3">
+	<div class="modal-body1">
+		<button class="modal3-off">X</button>
+		<div>과목 삭제</div>
+		<div>주의! 등록된 성적도 모두 삭제 됩니다.</div>
+		<form action="delSub.do" method="post">
+		<button>삭제</button>
+		<button class="modal3-off" type="button">취소</button>
+		</form>
+	</div>
+</div>
+<div class="modal2">
+	<div class="modal-body2">
+		<button class="modal2-off">X</button>
+		<div>성적 등록</div>
+		<form action="addAchieve.do" method="post">
+			<label for="userNum">학번</label>
+			<input type="text" name="userNum" id="userNum">
+			<label for="score">성적</label>
+			<input type="text" name="score" id="score">
+			<button>등록</button>
+			<button class="modal2-off" type="button">취소</button>
+		</form>
+	</div>
+</div>
+<div class="modalPut">
+	<div class="modal-body2">
+		<button class="modalPut-off">X</button>
+		<div>성적 수정</div>
+		<form action="putAchieve.do" method="post">
+		<label for="userNum">학번</label>
+		<input type="text" name="userNum" id="userNum" readonly>
+		<label for="name">이름</label>
+		<input type="text" name="name" id="name" readonly>
+		<label for="score">성적</label>
+		<input type="text" name="score" id="score">
+		<button>등록</button>
+		<button class="modalPut-off" type="button">취소</button>
+		</form>
+	</div>
+</div>
+<div class="modalDel">
+	<div class="modal-body1">
+		<button class="modalDel-off">X</button>
+		<div>성적 삭제</div>
+		<form action="delAchieve.do" method="post">
+		<input type="hidden" name="userNum" id="userNum">
+		<div>성적을 삭제하시겠습니까?</div>
+		<button>삭제</button>
+		<button class="modalDel-off" type="button">취소</button>
+		</form>
+	</div>
+</div>
+<%@ include file="../template/footer.jsp"%>
+</body>
 <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
 <script type="text/javascript">
@@ -244,114 +353,4 @@ function getList(){
 	});
 }
 </script>
-</head>
-<body>
-<%@ include file="../template/header.jsp" %>
-<%@ include file="../template/menu2.jsp" %>
-
-<div class="content">
-<h1>학생 성적 관리 웹사이트(ver 0.7.0)</h1>
-<h2>학생 성적 관리</h2>
-<p>과목
-	<select id="subject">
-		<option>과목 선택</option>
-	<%
-	request.setCharacterEncoding("UTF-8");
-	List<SubjectDTO> subject = (List<SubjectDTO>)request.getAttribute("subject");
-	String sub = request.getParameter("subName");
-	for(SubjectDTO bean : subject){
-	%>
-		<option value="<%=bean.getName()%>"><%=bean.getName() %></option>
-	<%} %>
-	</select>
-	<button class="modal1-on">추가</button>
-	<button class="modal3-on">삭제</button>
-	<span style="float:right">
-		<button class="modal2-on">성적등록</button>
-	</span>
-</p>
-<table>
-	<thead>
-		<tr>
-			<th>학번</th>
-			<th>이름</th>
-			<th>점수</th>
-			<th></th>
-		</tr>
-	</thead>
-    <tbody>
-        <tr>
-        	<td colspan="4">
-        		<h4>과목을 선택해주세요</h4>
-        	</td>
-    	</tr>
-    </tbody>
-</table>
-</div>
-<div class="modal1">
-	<div class="modal-body1">
-		<button class="modal1-off">X</button>
-		<div>과목 추가</div>
-		<form action="addSub.do" method="post">
-		<input type="text" name="sub" id="sub">
-		<button>등록</button>
-		<button class="modal1-off" type="button">취소</button>
-		</form>
-	</div>
-</div>
-<div class="modal3">
-	<div class="modal-body1">
-		<button class="modal3-off">X</button>
-		<div>과목 삭제</div>
-		<div>주의! 등록된 성적도 모두 삭제 됩니다.</div>
-		<form action="delSub.do" method="post">
-		<button>삭제</button>
-		<button class="modal3-off" type="button">취소</button>
-		</form>
-	</div>
-</div>
-<div class="modal2">
-	<div class="modal-body2">
-		<button class="modal2-off">X</button>
-		<div>성적 등록</div>
-		<form action="addAchieve.do" method="post">
-			<label for="userNum">학번</label>
-			<input type="text" name="userNum" id="userNum">
-			<label for="score">성적</label>
-			<input type="text" name="score" id="score">
-			<button>등록</button>
-			<button class="modal2-off" type="button">취소</button>
-		</form>
-	</div>
-</div>
-<div class="modalPut">
-	<div class="modal-body2">
-		<button class="modalPut-off">X</button>
-		<div>성적 수정</div>
-		<form action="putAchieve.do" method="post">
-		<label for="userNum">학번</label>
-		<input type="text" name="userNum" id="userNum" readonly>
-		<label for="name">이름</label>
-		<input type="text" name="name" id="name" readonly>
-		<label for="score">성적</label>
-		<input type="text" name="score" id="score">
-		<button>등록</button>
-		<button class="modalPut-off" type="button">취소</button>
-		</form>
-	</div>
-</div>
-<div class="modalDel">
-	<div class="modal-body1">
-		<button class="modalDel-off">X</button>
-		<div>성적 삭제</div>
-		<form action="delAchieve.do" method="post">
-		<input type="hidden" name="userNum" id="userNum">
-		<div>성적을 삭제하시겠습니까?</div>
-		<button>삭제</button>
-		<button class="modalDel-off" type="button">취소</button>
-		</form>
-	</div>
-</div>
-<%@ include file="../template/footer.jsp"%>
-</body>
 </html>

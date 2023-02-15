@@ -7,15 +7,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%
-String root = request.getContextPath();
-%>
 <link href="css/mycss.css" rel="stylesheet">
 <link href="css/carousel.css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/carousel.js"></script>
-
 </head>
 <body>
 <%@ include file="template/header2.jsp" %>

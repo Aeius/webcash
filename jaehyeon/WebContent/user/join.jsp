@@ -32,7 +32,7 @@
     
 <div class="content">
 <h1>회원가입</h1>
-<form action="insert.jsp" method="post">
+<form action="join.do" method="post">
 <table>
 	<tbody>
 	<tr>
@@ -60,10 +60,23 @@
 		</td>
 	</tr>
 	<tr>
+		<td>역할</td>
+		<td>
+			<select name="job">
+				<option value="학생">학생</option>
+				<option value="교수">교수</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
 		<td colspan="2">
 			<button type="submit">회원가입</button>
-			<button type="reset">취소</button>
-			<a href="login.jsp">로그인</a>
+			<button type="reset">다시작성</button>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<a href="login.do">로그인하러가기</a>
 		</td>
 	</tr>
 	</tbody>

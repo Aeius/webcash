@@ -32,7 +32,7 @@
     
 <div class="content">
 <h1>로그인</h1>
-<form action="insert.jsp" method="post">
+<form action="login.do" method="post">
 <table>
 	<tbody>
 	<tr>
@@ -50,7 +50,11 @@
 	<tr>
 		<td colspan="2">
 			<button type="submit">로그인</button>
-			<a href="join.jsp">회원가입</a>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<a href="join.do">회원가입하러가기</a>
 		</td>
 	</tr>
 	</tbody>
