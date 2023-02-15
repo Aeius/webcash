@@ -4,6 +4,43 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/common/jquery-1.12.4.min.js"></script>
+    <script src="./js/common/masonry.pkgd.js"></script>
+    <script src="./js/common/imagesLoaded.min.js"></script>
+    <script>
+        $(function(){
+            var el = $('.restaurantListContainer');
+
+            var msnry = new Masonry( '.restaurantListContainer', {
+                itemSelector: '.restaurantItemContainer',
+                columnWidth: 300,
+                gutter : 20
+            });
+
+            imagesLoaded( '.restaurantListContainer' ).on( 'progress', function() {
+                msnry.layout();
+            });
+
+        });
+
+        $(window).on('scroll',function(e){
+            var scrollTop = $(this).scrollTop();
+            var innerHeight = $(this).innerHeight();
+            var scrollHeight = $('body').prop('scrollHeight');
+            
+            if(scrollTop+innerHeight>=scrollHeight-100){
+                console.log('새 데이터 조회');
+            }
+        });
+
+        $(document).on('mouseover', '.restaurantItemContainer', function(e){
+            console.log('test');
+        });
+        $(document).on('mouseout', '.restaurantItemContainer', function(e){
+            console.log('test');
+        });
+    </script>
 </head>
 <body>
     <div id="header">
@@ -20,7 +57,58 @@
     </div>
     <div id="contents">
         <div id="main">
-            메인화면입니다.
+            <div class="restaurantListContainer">
+                <div class="restaurantItemContainer">
+                    <img src="https://picsum.photos/id/10/200/300" />
+                    <div class="restaurantInfoContainer">
+                        <h2>고관함박</h2>
+                        <p>맛있는 함박스테이크</p>
+                        <p>부산진역 근처</p>
+                    </div>
+                </div>
+                <div class="restaurantItemContainer">
+                    <img src="https://picsum.photos/id/15/400/300" />
+                    <div class="restaurantInfoContainer active">
+
+                    </div>
+                </div>
+                <div class="restaurantItemContainer">
+                    <img src="https://picsum.photos/id/17/100/200" />
+                    <div class="restaurantInfoContainer">
+
+                    </div>
+                </div>
+                <div class="restaurantItemContainer">
+                    <img src="https://picsum.photos/id/34/300/150" />
+                    <div class="restaurantInfoContainer">
+
+                    </div>
+                </div>
+                <div class="restaurantItemContainer">
+                    <img src="https://picsum.photos/id/48/350/250" />
+                    <div class="restaurantInfoContainer">
+
+                    </div>
+                </div>
+                <div class="restaurantItemContainer">
+                    <img src="https://picsum.photos/id/71/270/630" />
+                    <div class="restaurantInfoContainer">
+
+                    </div>
+                </div>
+                <div class="restaurantItemContainer">
+                    <img src="https://picsum.photos/id/11/500/300" />
+                    <div class="restaurantInfoContainer">
+
+                    </div>
+                </div>
+                <div class="restaurantItemContainer">
+                    <img src="https://picsum.photos/id/21/600/450" />
+                    <div class="restaurantInfoContainer">
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div id="footer"></div>

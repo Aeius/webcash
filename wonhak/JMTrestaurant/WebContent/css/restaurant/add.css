@@ -34,6 +34,10 @@
     font-size: 18px;
     text-indent: 10px;
 }
+.inputWrap .inputGroup .inputForm>.mapContainer{
+    width:100%;
+	height:300px;
+}
 .inputWrap .inputGroup .inputForm>textarea{
 	float: right;
     width: 75%;

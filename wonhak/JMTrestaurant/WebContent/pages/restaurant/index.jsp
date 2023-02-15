@@ -5,9 +5,11 @@
     %>
 <!DOCTYPE html>
 <html>
+<head>
     <jsp:include page="/pages/templates/head.jsp">
         <jsp:param value="restaurant/index" name="pageName" />
     </jsp:include> 
+</head>
 <body>
 	<jsp:include page="/pages/templates/header.jsp"></jsp:include> 
 	<jsp:include page="/pages/templates/nav.jsp"></jsp:include> 

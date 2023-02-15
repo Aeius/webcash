@@ -2,9 +2,12 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<head>
     <jsp:include page="/pages/templates/head.jsp">
         <jsp:param value="restaurant/detail" name="pageName" />
-    </jsp:include> 
+    </jsp:include>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8fdc102fec7c743e98f39b3ed2466a1c"></script>
+</head>
 <body>
 	<jsp:include page="/pages/templates/header.jsp"></jsp:include> 
 	<jsp:include page="/pages/templates/nav.jsp"></jsp:include> 
@@ -34,12 +37,12 @@
                             <input type="text" name="content" id="content" readonly />
                         </div>
                         <div class="inputForm">
-                            <label for="loc_x">맛집 위치(x 좌표)</label>
-                            <input type="number" name="loc_x" id="loc_x" readonly />
-                        </div>
-                        <div class="inputForm">
-                            <label for="loc_y">맛집 위치(y 좌표)</label>
-                            <input type="number" name="loc_y" id="loc_y" readonly />
+                            <label>맛집 위치 지정</label>
+                            <div id="map" class="mapContainer">
+	        						
+	        				</div>
+                            <input type="hidden" name="loc_x" id="loc_x" value="0" />
+                            <input type="hidden" name="loc_y" id="loc_y" value="0" />
                         </div>
                         <div class="imgViewForm">
                         	
