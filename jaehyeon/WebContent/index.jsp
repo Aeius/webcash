@@ -32,7 +32,7 @@ String root = request.getContextPath();
         </ul>
     </div>
 <h2>공지사항</h2>
-<table>
+<table class="board">
 	<thead>
 		<tr>
 			<th>글번호</th>

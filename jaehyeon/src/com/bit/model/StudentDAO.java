@@ -19,19 +19,19 @@ public class StudentDAO {
 	ResultSet rs;
 	PreparedStatement pstmt;
 		
-	public List<StudentDTO> selectInfo(int userNum) throws SQLException {
+	public List<AchieveDTO> selectInfo(int userNum) throws SQLException {
 		log.setLevel(Level.SEVERE);
 		String sql = "select a.sub_name, a.score "
 				+ "from achieve a inner join user b "
 				+ "where a.user_num=? and a.user_num=b.num;";
-		List<StudentDTO> list = new ArrayList<StudentDTO>();
+		List<AchieveDTO> list = new ArrayList<AchieveDTO>();
 		try {
 			conn = MyConn.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, userNum);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				StudentDTO bean = new StudentDTO();
+				AchieveDTO bean = new AchieveDTO();
 				bean.setSubName(rs.getNString("sub_name"));
 				bean.setScore(rs.getInt("score"));
 				log.info(bean.toString());

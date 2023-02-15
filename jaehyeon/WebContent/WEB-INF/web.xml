@@ -22,40 +22,20 @@
   	<servlet-name>notice</servlet-name>
   	<url-pattern>/notice/list.do</url-pattern>
   </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>noticeDetail</servlet-name>
-  	<servlet-class>com.bit.controller.NoticeController</servlet-class>
-  </servlet>
   <servlet-mapping>
-  	<servlet-name>noticeDetail</servlet-name>
+  	<servlet-name>notice</servlet-name>
   	<url-pattern>/notice/detail.do</url-pattern>
   </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>noticeWrite</servlet-name>
-  	<servlet-class>com.bit.controller.NoticeController</servlet-class>
-  </servlet>
   <servlet-mapping>
-  	<servlet-name>noticeWrite</servlet-name>
+  	<servlet-name>notice</servlet-name>
   	<url-pattern>/notice/write.do</url-pattern>
   </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>noticeModify</servlet-name>
-  	<servlet-class>com.bit.controller.NoticeController</servlet-class>
-  </servlet>
   <servlet-mapping>
-  	<servlet-name>noticeModify</servlet-name>
+  	<servlet-name>notice</servlet-name>
   	<url-pattern>/notice/modify.do</url-pattern>
   </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>noticeDelete</servlet-name>
-  	<servlet-class>com.bit.controller.NoticeController</servlet-class>
-  </servlet>
   <servlet-mapping>
-  	<servlet-name>noticeDelete</servlet-name>
+  	<servlet-name>notice</servlet-name>
   	<url-pattern>/notice/delete.do</url-pattern>
   </servlet-mapping>
   
@@ -67,49 +47,24 @@
   	<servlet-name>correction</servlet-name>
   	<url-pattern>/correction/list.do</url-pattern>
   </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>correctionDetail</servlet-name>
-  	<servlet-class>com.bit.controller.CorrectionController</servlet-class>
-  </servlet>
   <servlet-mapping>
-  	<servlet-name>correctionDetail</servlet-name>
+  	<servlet-name>correction</servlet-name>
   	<url-pattern>/correction/detail.do</url-pattern>
   </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>correctionWrite</servlet-name>
-  	<servlet-class>com.bit.controller.CorrectionController</servlet-class>
-  </servlet>
   <servlet-mapping>
-  	<servlet-name>correctionWrite</servlet-name>
+  	<servlet-name>correction</servlet-name>
   	<url-pattern>/correction/write.do</url-pattern>
   </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>correctionModify</servlet-name>
-  	<servlet-class>com.bit.controller.CorrectionController</servlet-class>
-  </servlet>
   <servlet-mapping>
-  	<servlet-name>correctionModify</servlet-name>
+  	<servlet-name>correction</servlet-name>
   	<url-pattern>/correction/modify.do</url-pattern>
   </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>correctionDelete</servlet-name>
-  	<servlet-class>com.bit.controller.CorrectionController</servlet-class>
-  </servlet>
   <servlet-mapping>
-  	<servlet-name>correctionDelete</servlet-name>
+  	<servlet-name>correction</servlet-name>
   	<url-pattern>/correction/delete.do</url-pattern>
   </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>correctionReply</servlet-name>
-  	<servlet-class>com.bit.controller.CorrectionController</servlet-class>
-  </servlet>
   <servlet-mapping>
-  	<servlet-name>correctionReply</servlet-name>
+  	<servlet-name>correction</servlet-name>
   	<url-pattern>/correction/reply.do</url-pattern>
   </servlet-mapping>
   
@@ -120,5 +75,34 @@
   <servlet-mapping>
   	<servlet-name>student</servlet-name>
   	<url-pattern>/student/list.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>teacher</servlet-name>
+  	<servlet-class>com.bit.controller.TeacherController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>teacher</servlet-name>
+  	<url-pattern>/teacher/list.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>teacher</servlet-name>
+  	<url-pattern>/teacher/achieve.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>teacher</servlet-name>
+  	<url-pattern>/teacher/addSub.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>teacher</servlet-name>
+  	<url-pattern>/teacher/addAchieve.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>teacher</servlet-name>
+  	<url-pattern>/teacher/putAchieve.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>teacher</servlet-name>
+  	<url-pattern>/teacher/delAchieve.do</url-pattern>
   </servlet-mapping>
 </web-app>

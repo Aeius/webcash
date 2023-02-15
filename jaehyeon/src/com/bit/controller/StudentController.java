@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bit.model.StudentDAO;
-import com.bit.model.StudentDTO;
+import com.bit.model.AchieveDTO;
 
 public class StudentController extends HttpServlet {
 	@Override
@@ -19,7 +19,7 @@ public class StudentController extends HttpServlet {
 		StudentDAO dao = new StudentDAO();
 		int userNum = Integer.parseInt(req.getParameter("num"));
 		try {
-			List<StudentDTO> list = dao.selectInfo(userNum);
+			List<AchieveDTO> list = dao.selectInfo(userNum);
 			req.setAttribute("student", list);
 		} catch (SQLException e) {
 			e.printStackTrace();

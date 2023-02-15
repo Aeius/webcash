@@ -1,5 +1,5 @@
 <%@page import="java.util.List"%>
-<%@page import="com.bit.model.StudentDTO"%>
+<%@page import="com.bit.model.AchieveDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,7 +20,7 @@
 <%@ include file="../template/header.jsp" %>
 <%@ include file="../template/menu2.jsp" %>
 <%
-List<StudentDTO> list = (List<StudentDTO>)request.getAttribute("student");
+	List<AchieveDTO> list = (List<AchieveDTO>)request.getAttribute("student");
 %>
 <div class="content">
 <h1>학생 성적 관리 웹사이트(ver 0.7.0)</h1>
@@ -33,8 +33,8 @@ List<StudentDTO> list = (List<StudentDTO>)request.getAttribute("student");
 			<div>점수</div>
 		</div>
 		<%
-		for(StudentDTO bean : list){
-		 %>
+			for(AchieveDTO bean : list){
+		%>
 		<div class="article">
 			<div><%=bean.getSubName() %></div>
 			<div><%=bean.getScore() %></div>

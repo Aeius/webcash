@@ -18,7 +18,7 @@
 <div class="content">
 <h1>학생 성적 관리 웹사이트(ver 0.7.0)</h1>
 <h2>정정 요청 게시판</h2>
-<table>
+<table class="board">
 	<thead>
 		<tr>
 			<th>글번호</th>

@@ -100,10 +100,10 @@
 	.content>table>tbody>tr>td:nth-child(3){
 	    width:58px;
 	}
-	.content>table>thead>tr>th:nth-child(4),
-	.content>table>tbody>tr>td:nth-child(4),
-	.content>table>thead>tr>th:nth-child(5),
-	.content>table>tbody>tr>td:nth-child(5){
+	.content>.board>thead>tr>th:nth-child(4),
+	.content>.board>tbody>tr>td:nth-child(4),
+	.content>.board>thead>tr>th:nth-child(5),
+	.content>.board>tbody>tr>td:nth-child(5){
 	    display: none;
 	}
 	.content>table>tbody>tr>td>a{
