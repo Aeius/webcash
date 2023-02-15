@@ -3,7 +3,7 @@
     <%
     String projectName = request.getContextPath();
     %>
-    <div id="header">
+    <div id="header" onclick="location.href='<%=projectName %>/'">
         <h1>우리 동네 JMT</h1>
         <div></div>
     </div>

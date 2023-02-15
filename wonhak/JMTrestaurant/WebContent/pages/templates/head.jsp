@@ -4,7 +4,6 @@
     String projectName = request.getContextPath();
     String pageName = request.getParameter("pageName");
     %>
-<head>
     <meta charset="UTF-8">
     <title>우리 동네 맛집</title>
     <link rel="stylesheet" href="<%=projectName+"/css/common.css"%>">
@@ -18,4 +17,3 @@
     <script src="<%=projectName+"/js/common/index.js"%>"></script>
     
     <script src="<%=projectName+"/js/"+pageName+".js"%>"></script>
-</head>
