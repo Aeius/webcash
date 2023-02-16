@@ -24,7 +24,7 @@ int totalDataCount=0;
 try{
 	conn=MysqlConnect.getConn();
 	
-	sqlWhere=" where 1=1 ";
+	sqlWhere=" where 1=1 and level=10 ";
 	if(!searchColumn.equals("") && !searchValue.equals("")) sqlWhere+="and mem."+searchColumn+" like '%"+searchValue+"%' ";
 	
 	sql="select count(*) as cnt from member mem "+sqlWhere;
