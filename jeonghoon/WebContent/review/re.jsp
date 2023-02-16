@@ -1,5 +1,3 @@
-<%@page import="org.apache.catalina.deploy.LoginConfig"%>
-<%@page import="com.sun.jndi.url.iiopname.iiopnameURLContextFactory"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -72,16 +70,24 @@ $(function() {
 </script>
 </head>
 <body>
-	<jsp:useBean id="login" class="com.user.UserBean" scope="session"/>
-<jsp:setProperty property="*" name="login"/>
+	
 	<jsp:include page="../template/header.jsp">
 				<jsp:param value=".." name="path"/>
 	</jsp:include>
-	
+<jsp:useBean id="login" class="com.user.UserBean" scope="session"/>
+<jsp:setProperty property="*" name="login"/>
 		<div id="content">
-		
-		<h2>리뷰 작성</h2>
+		<%@ page import="com.nullp.model.RevDto"%>
+		<%
+			RevDto bean = (RevDto)request.getAttribute("dto");
+		%>
+		<h2>답글 작성</h2>
 		<form method="post">
+			<input name="bernum" value="<%=bean.getRnum() %>" type="hidden">
+			<input name="ref" value="<%=bean.getRef() %>" type="hidden">
+			<input name="seq" value="<%=bean.getSeq() %>" type="hidden">
+			<input name="lvl" value="<%=bean.getLvl() %>" type="hidden">
+			<input name="uname" value="<%=login.getuid() %>" type="hidden">
 			<div>
 				<label>제목</label>
 				<input name="sub"/>

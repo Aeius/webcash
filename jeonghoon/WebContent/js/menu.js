@@ -12,7 +12,7 @@ $(function() {
 		.find('ol:eq(1)').css({'opacity':'0','height':'0px', 'width':'0px'})
 		.find('ol:eq(2)').css({'opacity':'0','height':'0px', 'width':'0px'});
 		var styleOn={
-			"backgroundColor":"red"
+			"backgroundColor":"rgb(200,50,50)"
 		}
         $(this).find('ol').clearQueue()
         .animate({'opacity':'1','height':'300px'},300,'linear');
@@ -20,7 +20,7 @@ $(function() {
 	}).mouseleave(function() {
 		$('.bx-controls-direction').find('a').css({'height':'282px'})
 		var styleOff={
-			"backgroundColor":"grey"
+			"backgroundColor":"rgb(122,122,0)"
 		}
         $(this).find('ol').clearQueue()
         .animate({'opacity':'0','height':'0px'},300,'linear');

@@ -37,4 +37,20 @@
 		<servlet-name>edit</servlet-name>
 		<url-pattern>/review/edit.do</url-pattern>
 	</servlet-mapping>
+  <servlet>
+		<servlet-name>delete</servlet-name>
+		<servlet-class>com.nullp.controller.DelController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>delete</servlet-name>
+		<url-pattern>/review/delete.do</url-pattern>
+	</servlet-mapping>
+  <servlet>
+		<servlet-name>re</servlet-name>
+		<servlet-class>com.nullp.controller.ReController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>re</servlet-name>
+		<url-pattern>/review/re.do</url-pattern>
+	</servlet-mapping>
 </web-app>

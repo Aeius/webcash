@@ -2,5 +2,7 @@
     pageEncoding="UTF-8"%>
 <div id="outfooter">
 		
-		<div id="infooter">~~~~~~~~~</div>
-	</div>
+		<div id="infooter">
+			footer
+		</div>
+</div>

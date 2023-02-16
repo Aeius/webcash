@@ -19,7 +19,6 @@ public class DetailController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		log.info(req.getParameter("idx"));
-		System.out.println(req.getParameter("idx"));
 		int rnum=Integer.parseInt(req.getParameter("idx"));
 		RevDao dao = new RevDao();
 		try {

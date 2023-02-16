@@ -7,6 +7,58 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../css/main.css">
 <style type="text/css">
+#content button{
+	margin:10px auto;
+	display: inline-block;
+	width:100px;
+	height: 35px;
+	box-sizing: border-box;
+	border: 2px solid grey;
+	border-radius: 4px;
+	text-align: center;
+	line-height: 35px;
+	color: rgba(0,0,0,0.5);
+	background-color: rgba(122,122,0,0.3);
+	text-decoration: none;
+}
+form{
+	width: 70%;
+	margin: 0px auto;
+}
+form div{
+	margin: 10px;
+}
+form div>span{
+	width: 150px;
+	display: inline-block;
+	padding-left: 10px;
+}
+
+form div>span:nth-child(2n+1){
+	background-color: rgba(122,122,0,0.3);
+}
+
+form #sub>span{
+	width: 300px;
+	font-size: 20px;
+	font-weight: bold;
+	background-color: white;
+}
+form #innerContent>span{	
+	background-color: white;
+}
+textarea{
+	width:600px; 
+	height:400px; 
+    resize:none;
+	border: medium solid black;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
 $(function(){
 	$('#content').find('a').last().click(function() {
 		history.back();
@@ -23,18 +75,15 @@ $(function(){
 		}
 		return false;
 	});
-});
-</style>
-<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="../js/jquery.bxslider.min.js"></script>
-<script type="text/javascript">
-$(function(){
 	$('#content')
-		.find('button')
-			.last().click(function(){
-				history.back();
-			})
-	;
+	.find('button')
+		.last().click(function(){
+			history.back();
+		})
+;
+
+});
+$(function(){
 	
 });
 </script>
@@ -52,8 +101,8 @@ $(function(){
 		%>
 		<form method="post">
 		<input type="hidden" name="rnum" value="<%=bean.getRnum() %>">
-		<h2><input name="sub" value="<%=bean.getSub() %>"/></h2>
 			
+			<div id="sub"><input name="sub" value="<%=bean.getSub() %>"/></div>
 			<div>
 				<span>글 번호</span>
 				<span><%=bean.getRnum()%></span>				
@@ -66,8 +115,8 @@ $(function(){
 				<span>조회수</span>
 				<span><%=bean.getViewCnt()%></span>				
 			</div>
-			<div>
-				<span><input name="content" value="<%=bean.getContent()%>"/></span>
+			<div id="innerContent">
+				<span><textarea name="content"><%=bean.getContent()%></textarea></span>
 			</div>
 			
 			<div>
