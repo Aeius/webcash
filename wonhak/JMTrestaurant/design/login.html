@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        #main .loginForm{
+            width: 500px;
+            padding:30px;
+            margin: 0 auto;
+            margin-top: 150px;
+            border: 1px solid #9d9c9c;
+            border-radius: 15px;
+        }
+        .loginForm .inputForm{
+            text-align: center;
+        }
+        .loginForm .inputForm input{
+            width: 300px;
+            height: 35px;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .loginForm .buttonForm{
+            text-align: center;
+            margin-top: 20px;
+        }
+        .loginForm .buttonForm>button{
+            width: 70%;
+            height: 50px;
+            border: 0px;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            background-color: red;
+            font-weight: bold;
+        }
+        .loginForm .buttonForm>div{
+            margin-top: 15px;
+        }
+        .loginForm .buttonForm>div>a{
+            color: red;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>우리 동네 JMT</h1>
+        <div></div>
+    </div>
+    <div id="nav">
+        <ul>
+            <li><a href="#" class="active">홈</a></li>
+            <li><a href="./">회원 목록</a></li>
+            <li><a href="./">맛집 목록</a></li>
+            <li><a href="./">커뮤니티</a></li>
+        </ul>
+    </div>
+    <div id="contents">
+        <div id="main">
+            <div class="loginForm">
+        		<form method="post">
+        			<div class="inputForm">
+        				<input type="text" name="m_id" placeholder="아이디를 입력하세요." />
+        				<input type="password" name="password" placeholder="비밀번호를 입력하세요." />
+        			</div>
+        			<div class="buttonForm">
+        				<button type="submit">로그인</button>
+        				<div>계정이 존재하지 않는다면, <a href="<%=projectName%>/join.do">회원가입</a> 하러가기</div>
+        			</div>
+        		</form>
+        	</div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>

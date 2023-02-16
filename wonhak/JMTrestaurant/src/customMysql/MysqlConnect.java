@@ -84,8 +84,9 @@ public class MysqlConnect {
 			sql+="password varchar(100) not null,";
 			sql+="name varchar(20) not null,";
 			sql+="email varchar(50) not null,";
-			sql+="age int not null default(0),";
+			sql+="age int not null default(8),";
 			sql+="gender varchar(2) not null default('M') check (gender in ('M','F')),";
+			sql+="level int not null default(10) check (level in (1,10)),";
 			sql+="reg_date datetime not null default(now())";
 			sql+=")";
 			stmt = conn.createStatement();

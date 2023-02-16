@@ -65,6 +65,7 @@ function getData(){
  				tbodyHTML+="<td>"+value.gender+"</td>";
  				tbodyHTML+="<td>"+value.reg_date+"</td>";
  				tbodyHTML+="<td><button type=\"button\" onclick=\"location.href='/JMTrestaurant/pages/member/edit.jsp?m_id="+value.m_id+"'\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button><button type=\"button\" onclick=\"removeData('"+value.m_id+"')\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></button></td>";
+
  				tbodyHTML+="</tr>";
  			}
  			tbody.innerHTML=tbodyHTML;
