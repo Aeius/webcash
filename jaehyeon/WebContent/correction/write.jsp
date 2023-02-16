@@ -17,7 +17,7 @@
 <h2>정정 요청 게시판</h2>
 <h2>글 작성</h2>
 <form action="write.do" method="post">
-<input type="hidden" value="20230201" name="userNum">
+<input type="hidden" value="<%=userNum%>>" name="userNum">
 <table> 
 	<tr>
 		<td>글제목</td>

@@ -3,7 +3,7 @@ package com.bit.model;
 import java.util.Date;
 
 public class NoticeDTO {
-	private int num, cnt;
+	private int num, userNum, cnt;
 	private String title, content, userName;
 	private Date date;
 	public int getCnt() {
@@ -11,6 +11,12 @@ public class NoticeDTO {
 	}
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
+	}
+	public int getUserNum() {
+		return userNum;
+	}
+	public void setUserNum(int userNum) {
+		this.userNum = userNum;
 	}
 	public int getNum() {
 		return num;

@@ -26,7 +26,7 @@
 CorrectionDTO bean = (CorrectionDTO)request.getAttribute("detail");
 %>
 <form action="reply.do" method="post">
-<input type="hidden" name="userNum" value="1">
+<input type="hidden" name="userNum" value="<%=userNum %>">
 <input type="hidden" name="ref" value="<%=bean.getRef()%>">
 <input type="hidden" name="seq" value="<%=bean.getSeq()%>">
 <input type="hidden" name="lvl" value="<%=bean.getLvl()%>">

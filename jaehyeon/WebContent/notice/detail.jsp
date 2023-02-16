@@ -39,12 +39,17 @@
 		</tr>
 		<tr>
 		</tr>
+		<%
+		String userNum = String.valueOf(session.getAttribute("userNum"));
+		if(bean.getUserNum().equals(userNum){
+		%>
 		<tr>
 			<td colspan="2">
 				<a href="modify.do?num=<%=bean.getNum()%>">[수정]</a>
 				<a href="delete.do?num=<%=bean.getNum()%>">[삭제]</a>
 			</td>
 		</tr>
+		<% } %>
 	</tbody>
 </table>
 </form>
