@@ -27,7 +27,10 @@ public class RestaurantDao {
 	
 	public ArrayList<Restaurant> getList(int currentPageNum, int countDataInPage, int countInPageGroup, String searchColumn, String searchValue){
 		String sqlWhere=" where 1=1 ";
-		if(!searchColumn.equals("") && !searchValue.equals("")) sqlWhere+="and ? like ? ";
+		if(!searchColumn.equals("") && !searchValue.equals("")) {
+			 if(searchColumn.equals("name")) sqlWhere+="and rest.name like ? ";
+			 if(searchColumn.equals("addr")) sqlWhere+="and rest.addr like ? ";
+		}
 		
 		int startPage = currentPageNum*countDataInPage;
 		String sql="select * from (select rest.*, @rownum:=@rownum+1 as num from restaurant rest, (select @rownum:=0 from dual) a "+sqlWhere+") b order by num asc limit "+startPage+", "+countDataInPage;
@@ -35,10 +38,10 @@ public class RestaurantDao {
 		ArrayList<Restaurant> list = new ArrayList<Restaurant>();
 		try {
 			log.info(searchColumn);
+			log.info(searchValue);
 			pstmt=conn.prepareStatement(sql);
 			if(!searchColumn.equals("") && !searchValue.equals("")) {
-				pstmt.setString(1, "rest."+searchColumn);
-				pstmt.setString(2, "%"+searchValue+"%");
+				pstmt.setString(1, "%"+searchValue+"%");
 			}
 			rs=pstmt.executeQuery();
 			
@@ -80,15 +83,17 @@ public class RestaurantDao {
 	
 	public int getListTotalCount(String searchColumn, String searchValue) {
 		String sqlWhere=" where 1=1 ";
-		if(!searchColumn.equals("") && !searchValue.equals("")) sqlWhere+="and ? like ? ";
+		if(!searchColumn.equals("") && !searchValue.equals("")) {
+			 if(searchColumn.equals("name")) sqlWhere+="and rest.name like ? ";
+			 if(searchColumn.equals("addr")) sqlWhere+="and rest.addr like ? ";
+		}
 		
 		String sql="select count(*) as cnt from restaurant rest "+sqlWhere;
 		int totalDataCount=0;
 		try {
 			pstmt=conn.prepareStatement(sql);
 			if(!searchColumn.equals("") && !searchValue.equals("")) {
-				pstmt.setString(1, "rest."+searchColumn);
-				pstmt.setString(2, "%"+searchValue+"%");
+				pstmt.setString(1, "%"+searchValue+"%");
 			}
 			rs=pstmt.executeQuery();
 			

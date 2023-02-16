@@ -23,11 +23,17 @@ public class ListController extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		
 		int currentPageNum = req.getParameter("currentPageNum")!=null?(Integer.parseInt(req.getParameter("currentPageNum"))-1):0;
 		int countDataInPage = req.getParameter("countDataInPage")!=null?Integer.parseInt(req.getParameter("countDataInPage")):0;
 		int countInPageGroup = req.getParameter("countInPageGroup")!=null?Integer.parseInt(req.getParameter("countInPageGroup")):0;
 		String searchColumn = req.getParameter("searchColumn")!=null?req.getParameter("searchColumn"):"";
 		String searchValue = req.getParameter("searchValue")!=null?req.getParameter("searchValue"):"";
+
+		searchValue = new String(searchValue.getBytes("iso-8859-1"), "utf-8");
+		
+		System.out.println(searchValue);
 		
 		RestaurantDao dao = new RestaurantDao();
 		ArrayList<Restaurant> list = dao.getList(currentPageNum, countDataInPage, countInPageGroup, searchColumn, searchValue);
