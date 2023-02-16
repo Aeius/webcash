@@ -3,7 +3,7 @@
      <%
     	String path = request.getParameter("path");
     %>
-    
+
 <script type="text/javascript" src="<%=path %>/js/menu.js"></script>
 <jsp:useBean id="login" class="com.user.UserBean" scope="session"></jsp:useBean>
     <div id="header">

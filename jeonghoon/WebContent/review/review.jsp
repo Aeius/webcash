@@ -1,4 +1,4 @@
-<%@page import="com.nullp.model.RevDto"%>
+<%@ page import="com.nullp.model.RevDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -7,8 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../css/main.css">
-
 <style type="text/css">
+<<<<<<< HEAD
 #content h2{
 	width: 30%;
 }
@@ -50,6 +50,8 @@
 	text-decoration: none;
 }
 
+=======
+>>>>>>> 980994a677f69c98e486cd10fb2229a120255ed2
 </style>
 <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
 <jsp:useBean id="login" class="com.user.UserBean" scope="session"/>
@@ -121,6 +123,13 @@ $(window).scroll(function(){
 				<%} %>
 			</tbody>
 		</table>
+<<<<<<< HEAD
+=======
+		<p>
+			<a href="add.do">후기 입력</a>
+		</p>
+
+>>>>>>> 980994a677f69c98e486cd10fb2229a120255ed2
 	</div>
 	<jsp:include page="../template/footer.jsp"></jsp:include>
 </body>
