@@ -8,6 +8,16 @@
     </jsp:include> 
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8fdc102fec7c743e98f39b3ed2466a1c"></script>
 </head>
+<%
+session = request.getSession();
+
+String m_id=null;
+int level=10;
+if(session.getAttribute("m_id")!=null){
+	m_id=session.getAttribute("m_id").toString();
+	level=Integer.parseInt(session.getAttribute("level").toString());
+}
+%>
 <body>
 	<jsp:include page="/pages/templates/header.jsp"></jsp:include> 
 	<jsp:include page="/pages/templates/nav.jsp"></jsp:include> 
@@ -18,7 +28,7 @@
                     <h2>맛집 추가</h2>
                 </div>
                 <form method="post" enctype="multipart/form-data">
-                	<input type="hidden" name="m_id" value="test11" />
+                	<input type="hidden" name="m_id" value="<%=m_id %>" />
                     <div class="inputGroup">
                         <div class="inputForm">
                             <label for="name">맛집 이름</label>

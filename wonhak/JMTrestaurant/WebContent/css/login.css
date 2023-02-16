@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+#main .loginForm{
+    width: 500px;
+    padding:30px;
+    margin: 0 auto;
+    margin-top: 150px;
+    border: 1px solid #9d9c9c;
+    border-radius: 15px;
+}
+.loginForm .inputForm{
+    text-align: center;
+}
+.loginForm .inputForm input{
+    width: 300px;
+    height: 35px;
+    margin-top: 15px;
+    font-size: 18px;
+}
+.infoWarning{
+	color:red;
+	font-size:12px;
+	text-align:center;
+}
+.loginForm .buttonForm{
+    text-align: center;
+    margin-top: 40px;
+}
+.loginForm .buttonForm>button{
+    width: 70%;
+    height: 50px;
+    border: 0px;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    background-color: red;
+    font-weight: bold;
+}
+.loginForm .buttonForm>div{
+    margin-top: 15px;
+}
+.loginForm .buttonForm>div>a{
+    color: red;
+    font-style: italic;
+}

@@ -31,6 +31,11 @@
 }
 #content td{
 align-content: center;
+
+}
+#content td>a{
+text-decoration: none;
+color: black;
 }
 </style>
 <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
@@ -53,12 +58,12 @@ align-content: center;
 				</tr>
 				<tr>
 					<td>아이디</td>
-					<td><input type="text"></td>
+					<td><input type="text" name="uid"></td>
 					<td rowspan="2"><button type="submit" id="loginBtn">로그인</button></td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>
-					<td><input type="text"></td>
+					<td><input type="password" name="upw"></td>
 				</tr>
 				
 			<tr>
@@ -72,13 +77,13 @@ align-content: center;
 			<tr>
 				<td class="blank"></td>
 			</tr>
-			<tr>
-							<td colspan="3" align="center">
-					<a href="findId.jsp">ID</a>
-					 / 
-					<a href="resetPw.jsp">PW를 잊어버렸어요</a>
-				</td>
-			</tr>
+<!-- 			<tr> -->
+<!-- 				<td colspan="3" align="center"> -->
+<!-- 					<a href="findId.jsp">ID</a> -->
+<!-- 					 /  -->
+<!-- 					<a href="resetPw.jsp">PW를 잊어버렸어요</a> -->
+<!-- 				</td> -->
+<!-- 			</tr> -->
 			</form>
 			</table>
 	</div>

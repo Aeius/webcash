@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+#main .joinForm{
+    width: 500px;
+    padding:30px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border: 1px solid #9d9c9c;
+    border-radius: 15px;
+}
+.joinForm .inputForm{
+    text-align: center;
+}
+.joinForm .inputForm>*{
+    width: 300px;
+    height: 35px;
+    margin-top: 40px;
+    font-size: 18px;
+}
+.joinForm .inputForm>.radioGroup{
+    text-align: right;
+}
+.joinForm .inputForm>.radioGroup>*:nth-child(2){
+    margin-right: 15px;
+}
+.joinForm .inputForm>.radioGroup>label{
+margin-left: 8px;
+}
+.joinForm .buttonForm{
+    text-align: center;
+    margin-top: 40px;
+}
+.joinForm .buttonForm>button{
+    width: 70%;
+    height: 50px;
+    border: 0px;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    background-color: red;
+    font-weight: bold;
+}
+.joinForm .buttonForm>div{
+    margin-top: 15px;
+}
+.joinForm .buttonForm>div>a{
+    color: red;
+    font-style: italic;
+}

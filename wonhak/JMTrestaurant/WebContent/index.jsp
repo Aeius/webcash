@@ -19,7 +19,6 @@
 	<div id="contents">
         <div id="main">
             <div class="restaurantListContainer">
-                
             </div>
             <div class="popupForm">
         		<div class="popupWrap">

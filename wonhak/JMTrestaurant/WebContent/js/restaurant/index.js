@@ -7,8 +7,11 @@
  var countInPageGroup=5;
  var parameter="?currentPageNum="+currentPageNum+"&countDataInPage="+countDataInPage+"&countInPageGroup="+countInPageGroup;
 
+ var session_m_id=null;
+ var session_level=10;
+
  window.onload=function(){
- 	getData();
+  	getData();
  	
  	 var closeButton = document.querySelector('.popupForm .popupHeader i').onclick=function(){
  	 	document.querySelector('#main .popupForm').style.display='none';
@@ -44,6 +47,9 @@ function clickPage(PageNum){
 }
 
 function getData(){
+	session_m_id=document.getElementById('m_id').value;
+	session_level=document.getElementById('level').value;
+
 	var tbody,tbodyHTML;
  	
  	tbody=document.querySelector('tbody');
@@ -62,7 +68,9 @@ function getData(){
  				tbodyHTML+="<td>"+value.addr+"</td>";
  				tbodyHTML+="<td>"+value.m_id+"</td>";
  				tbodyHTML+="<td>"+value.reg_date+"</td>";
- 				tbodyHTML+="<td><button type=\"button\" onclick=\"location.href='/JMTrestaurant/restaurant/edit.do?r_id="+value.r_id+"'\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button><button type=\"button\" onclick=\"removeData('"+value.r_id+"')\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></button></td>";
+ 				if((session_m_id || session_m_id!='null') && session_level==1){
+ 					tbodyHTML+="<td><button type=\"button\" onclick=\"location.href='/JMTrestaurant/restaurant/edit.do?r_id="+value.r_id+"'\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button><button type=\"button\" onclick=\"removeData('"+value.r_id+"')\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></button></td>";
+ 				}
  				tbodyHTML+="</tr>";
  			}
  			tbody.innerHTML=tbodyHTML;

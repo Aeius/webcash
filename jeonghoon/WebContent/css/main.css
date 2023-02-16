@@ -3,13 +3,14 @@
 	margin: 0px auto;
 }
 
-#header>div {
+#header>div,
+#header>p
+ {
 	width: 30%;
 	float: right;
 }
 
 #header>div>a {
-	float: right;
 }
 
 #header #headLogin {
@@ -18,7 +19,7 @@
 }
 
 #menu {
-	background-color: grey;
+	background-color: rgb(122,122,0);
 	height: 35px;
 }
 
@@ -48,7 +49,7 @@
 }
 
 #menu>ul>li>a:hover{
-	background-color: red;
+	background-color: rgb(200,50,50);
 }
 
 #menu>ul>li>ol {
@@ -61,7 +62,7 @@
 	list-style: none;
 	padding: 0px;
 	opacity: 0;
-	background-color: red;
+	background-color: rgb(120,200,0);
 }
 
 #menu>ul>li>ol>li>ol {
@@ -74,7 +75,7 @@
 	list-style: none;
 	padding: 0px;
 	opacity: 0;
-	background-color: yellow;
+	background-color: rgb(160,200,40);
 }
 
 
@@ -94,9 +95,9 @@
 }
 
 #outfooter {
-	height: 100px;
+	height: 80px;
 	width: 100%;
-	background-color: gray;
+	background-color: rgb(122,122,0);
 }
 
 #infooter {

@@ -2,6 +2,15 @@
     pageEncoding="UTF-8"%>
     <%
     String projectName = request.getContextPath();
+    
+	session = request.getSession();
+    
+    String m_id=null;
+    int level=10;
+    if(session.getAttribute("m_id")!=null){
+    	m_id=session.getAttribute("m_id").toString();
+    	level=Integer.parseInt(session.getAttribute("level").toString());
+    }
     %>
 <!DOCTYPE html>
 <html>
@@ -32,6 +41,8 @@
                 </div>
         	</div>
         	<div class="dataTable">
+        		<input type="hidden" id="m_id" value="<%=m_id %>" />
+        		<input type="hidden" id="level" value="<%=level %>" />
                 <table>
                     <thead>
                         <tr>
@@ -40,7 +51,13 @@
                             <th>주소</th>
                             <th>등록회원ID</th>
                             <th>등록일</th>
+                            <%
+                            if(m_id!=null && level==1){
+                            %>
                             <th>설정</th>
+                            <%
+                            }
+                            %>
                         </tr>
                     </thead>
                     <tbody id="dataList">
