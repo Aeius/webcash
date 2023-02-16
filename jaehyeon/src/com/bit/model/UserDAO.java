@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import java.util.logging.Logger;
 
@@ -15,7 +16,7 @@ public class UserDAO{
 	Statement stmt;
 	ResultSet rs;
 	PreparedStatement pstmt;
-	public void insertUser(UserDTO bean) throws SQLException {
+	public int insertUser(UserDTO bean) throws SQLException, SQLIntegrityConstraintViolationException {
 		String sql = "insert into user value(0,?,?,?,?)";
 		try {
 			conn = MyConn.getConnection();
@@ -24,7 +25,7 @@ public class UserDAO{
 			pstmt.setNString(2, bean.getName());
 			pstmt.setNString(3, bean.getPw());
 			pstmt.setNString(4, bean.getJob());
-			pstmt.executeUpdate();
+			return pstmt.executeUpdate();
 		} finally {
 			MyConn.close(pstmt);
 			MyConn.close(conn);

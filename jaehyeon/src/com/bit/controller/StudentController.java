@@ -17,14 +17,19 @@ public class StudentController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		StudentDAO dao = new StudentDAO();
-		int userNum = Integer.parseInt(req.getParameter("num"));
-		try {
-			List<AchieveDTO> list = dao.selectInfo(userNum);
-			req.setAttribute("student", list);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		if(req.getParameter("num").equals("null")) {
+			req.getRequestDispatcher("/user/login.jsp").forward(req, resp);
+		} else {
+			int userNum = Integer.parseInt(req.getParameter("num"));
+		
+			try {
+				List<AchieveDTO> list = dao.selectInfo(userNum);
+				req.setAttribute("student", list);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			RequestDispatcher rd = req.getRequestDispatcher("/student/list.jsp");
+			rd.forward(req, resp);
 		}
-		RequestDispatcher rd = req.getRequestDispatcher("/student/list.jsp");
-		rd.forward(req, resp);
 	}
 }

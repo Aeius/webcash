@@ -10,6 +10,18 @@
 <link href="../css/mycss.css" rel="stylesheet">
 <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<style type="text/css">
+#search{
+	margin:10px auto;
+	text-align: center;
+}
+#search>div{
+	width: 200px;
+	height: 90px;
+	border-bottom: 2px solid gray;
+	border-right: 2px solid gray;
+}
+</style>
 </head>
 <body>
 <%@ include file="../template/header.jsp" %>
@@ -44,23 +56,7 @@
 		<% }%>
     </tbody>
 </table>
-	<div id="pagination">
-  		<a href="#">이전</a>
-  		<a href="#">1</a>
-  		<a href="#">2</a>
-  		<a href="#">3</a>
-  		<a href="#">4</a>
-  		<a href="#">5</a>
-  		<a href="#">이후</a>
-  	</div>
   	<div id="search">
-  		<select>
-  			<option>제목</option>
-  			<option>작성자</option>
-  			<option>내용</option>
-  		</select>
-  		<input type="text" name="search">
-  		<button type="submit">검색</button>
   		<a href="write.do">글작성</a>
     </div>
 </div>

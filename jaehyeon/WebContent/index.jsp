@@ -25,6 +25,7 @@
             <li><img src="imgs/notice2.png"></li>
             <li><img src="imgs/notice3.png"></li>
             <li><img src="imgs/notice4.png"></li>
+            <li><img src="imgs/notice5.png"></li>
         </ul>
     </div>
 <h2>공지사항</h2>

@@ -3,6 +3,7 @@ package com.bit.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -10,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.bit.model.AchieveDTO;
 import com.bit.model.SubjectDTO;
@@ -55,12 +57,16 @@ public class TeacherController extends HttpServlet {
 		String path = req.getServletPath();
 		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
+		HttpSession session = req.getSession();
 		// 과목 추가
 		if(path.equals("/teacher/addSub.do")) {
+			
 			try {
 				dao.insertSubject(req.getParameter("sub"));
+			} catch (SQLIntegrityConstraintViolationException e) {
+				session.setAttribute("result", "dup");
 			} catch (SQLException e) {
-				e.printStackTrace();
+				session.setAttribute("result", "err");
 			}
 			resp.sendRedirect("list.do");
 		}
@@ -72,8 +78,10 @@ public class TeacherController extends HttpServlet {
 			bean.setScore(Integer.parseInt(req.getParameter("score")));
 			try {
 				dao.insertAchieve(bean);
+			} catch (SQLIntegrityConstraintViolationException e) {
+				session.setAttribute("result", "nothing");
 			} catch (SQLException e) {
-				e.printStackTrace();
+				session.setAttribute("result", "err");
 			}
 			resp.sendRedirect("list.do?subName="+req.getParameter("subName"));
 		}
@@ -86,7 +94,7 @@ public class TeacherController extends HttpServlet {
 			try {
 				dao.updateAchieve(bean);
 			} catch (SQLException e) {
-				e.printStackTrace();
+				session.setAttribute("result", "err");
 			}
 			resp.sendRedirect("list.do?subName="+req.getParameter("subName"));
 		}
@@ -98,7 +106,7 @@ public class TeacherController extends HttpServlet {
 			try {
 				dao.deleteAchieve(bean);
 			} catch (SQLException e) {
-				e.printStackTrace();
+				session.setAttribute("result", "err");
 			}
 			resp.sendRedirect("list.do?subName="+req.getParameter("subName"));
 		}

@@ -2,6 +2,8 @@ package com.bit.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +17,7 @@ import com.bit.model.UserDTO;
 
 @WebServlet(value={"/user/login.do", "/user/join.do", "/user/logout.do"})
 public class UserController extends HttpServlet {
+	Logger log = Logger.getGlobal();
 	UserDAO dao = new UserDAO();
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -45,17 +48,26 @@ public class UserController extends HttpServlet {
 			bean.setNum(Integer.parseInt(req.getParameter("num")));
 			bean.setPw(req.getParameter("pw"));
 			bean.setJob(req.getParameter("job"));
+			log.info(bean.toString());
 			try {
 				UserDTO result = dao.login(bean);
-				// 로그인 정보 세션에 저장하기
+				// 로그인 성공
 				HttpSession session = req.getSession();
-				session.setAttribute("num", result.getNum());
-				session.setAttribute("name", result.getName());
-				session.setAttribute("job", result.getJob());
+				if(result.getName()!=null) {
+					// 로그인 정보 세션에 저장하기
+					session.setAttribute("num", result.getNum());
+					session.setAttribute("name", result.getName());
+					session.setAttribute("job", result.getJob());
+					session.setAttribute("loginResult", "true");
+					resp.sendRedirect("login.do");
+				// 로그인 실패
+				} else {
+					session.setAttribute("loginResult", "false");
+					resp.sendRedirect("login.do");
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			resp.sendRedirect(context+"/index.do");
 		// 회원가입
 		} else if(path.equals("/user/join.do")) {
 			UserDTO bean = new UserDTO();
@@ -63,12 +75,20 @@ public class UserController extends HttpServlet {
 			bean.setName(req.getParameter("name"));
 			bean.setPw(req.getParameter("pw"));
 			bean.setJob(req.getParameter("job"));
+			log.info(bean.toString());
 			try {
 				dao.insertUser(bean);
+				resp.sendRedirect("login.do");
+			// 중복일 경우
+			} catch (SQLIntegrityConstraintViolationException e) {
+				HttpSession session = req.getSession();
+				session.setAttribute("joinResult", "false");
+				resp.sendRedirect("join.do");
 			} catch (SQLException e) {
 				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-			resp.sendRedirect("login.do");
 		}
 	}
 }

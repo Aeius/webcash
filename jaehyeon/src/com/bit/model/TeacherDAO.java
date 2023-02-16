@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +69,7 @@ public class TeacherDAO {
 		}
 	}
 
-	public void insertSubject(String sub) throws SQLException {
+	public void insertSubject(String sub) throws SQLException, SQLIntegrityConstraintViolationException {
 		String sql = "insert into subject value(0, ?)";
 		try {
 			conn = MyConn.getConnection();
@@ -81,7 +82,7 @@ public class TeacherDAO {
 		}
 	}
 
-	public void insertAchieve(AchieveDTO bean) throws SQLException {
+	public void insertAchieve(AchieveDTO bean) throws SQLException, SQLIntegrityConstraintViolationException {
 		String sql = "insert into achieve value(?,?,?)";
 		try {
 			conn = MyConn.getConnection();

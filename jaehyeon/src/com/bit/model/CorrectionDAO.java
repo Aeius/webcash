@@ -119,9 +119,15 @@ public class CorrectionDAO {
 		String sql = "select num, "
 				+ "(select name from user where num=a.user_num) as userName, "
 				+ "title, content, date, cnt, ref, seq, lvl from correction a where num=?";
+		String sql2 = "update correction set cnt=cnt+1 where num=?";
 		CorrectionDTO bean = new CorrectionDTO();
 		try {
 			conn = MyConn.getConnection();
+			pstmt = conn.prepareStatement(sql2);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+			pstmt.close();
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();

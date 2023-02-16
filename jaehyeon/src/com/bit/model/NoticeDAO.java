@@ -73,9 +73,15 @@ public class NoticeDAO {
 		String sql = "select num, "
 				+ "(select name from user where num=a.user_num) as userName, "
 				+ "title, content, date, cnt from notice a where num=?";
+		String sql2 = "update notice set cnt=cnt+1 where num=?";
 		NoticeDTO bean = new NoticeDTO();
 		try {
 			conn = MyConn.getConnection();
+			pstmt = conn.prepareStatement(sql2);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+			pstmt.close();
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();

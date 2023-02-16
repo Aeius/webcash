@@ -3,6 +3,7 @@ package com.bit.controller;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,6 +15,7 @@ import com.bit.model.CorrectionDAO;
 import com.bit.model.CorrectionDTO;
 
 public class CorrectionController extends HttpServlet {
+	Logger log = Logger.getGlobal();
 	CorrectionDAO dao = new CorrectionDAO();
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -32,6 +34,7 @@ public class CorrectionController extends HttpServlet {
 		} else if(path.equals("/correction/detail.do")) {
 			try {
 				CorrectionDTO bean = dao.selectOne(Integer.parseInt(req.getParameter("num")));
+				log.info(bean.toString());
 				req.setAttribute("detail", bean);
 			} catch (NumberFormatException | SQLException e) {
 				e.printStackTrace();
@@ -62,7 +65,6 @@ public class CorrectionController extends HttpServlet {
 			}
 			rd = req.getRequestDispatcher("/correction/reply.jsp");
 		}
-		
 		rd.forward(req, resp);
 	}
 	

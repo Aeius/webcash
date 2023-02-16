@@ -4,12 +4,16 @@
 	    margin: auto;
 	}
 	.header{
+		width: 480px;
+		height: 50px;
+		display: inline;	
+	}
+	.logo{
 		background-image: url("../imgs/logo.png");
 		background-repeat: no-repeat;
 		text-indent: -9999px;
-	    width: 250px;
+	    width: 220px;
 	    height: 50px;
-	    display: block;
 	    float: left;
 	}
 	.login{
@@ -17,7 +21,18 @@
 	    height: 50px;
 	    line-height: 50px;
 	    float: right;
-	    display: block;
+	    display: flex;
+	}
+	.login>span{
+		width:130px;
+		height:50px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.login>button{
+		height: 25px;
+		margin-top: 11px;
 	}
 	.menu{
 	    clear: both;
@@ -176,20 +191,35 @@
 	    margin: auto;
 	}
 	.header{
+		width: 480px;
+		height: 50px;
+		display: inline;	
+	}
+	.logo{
 		background-image: url("../imgs/logo.png");
 		background-repeat: no-repeat;
 		text-indent: -9999px;
-	    width: 300px;
+	    width: 220px;
 	    height: 50px;
-	    display: block;
 	    float: left;
 	}
 	.login{
-	    width: 300px;
+	    width: 200px;
 	    height: 50px;
 	    line-height: 50px;
 	    float: right;
-	    display: block;
+	    display: flex;
+	}
+	.login>span{
+		width:130px;
+		height:50px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.login>button{
+		height: 25px;
+		margin-top: 11px;
 	}
 	.menu{
 	    clear: both;

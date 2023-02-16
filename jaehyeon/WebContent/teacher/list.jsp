@@ -8,10 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%
-request.setCharacterEncoding("UTF-8");
-String subName = request.getParameter("subName");
-%>
 <link href="../css/mycss.css" rel="stylesheet">
 <style type="text/css">
 .content>table>tbody{
@@ -106,7 +102,39 @@ String subName = request.getParameter("subName");
 <body>
 <%@ include file="../template/header.jsp" %>
 <%@ include file="../template/menu2.jsp" %>
-
+<%
+request.setCharacterEncoding("UTF-8");
+String subName = request.getParameter("subName");
+if(!job.equals("교수")){
+	%>
+	<script type="text/javascript">
+		alert("교수님만 접근 할 수 있습니다!");
+		location.href="/jaehyeon/index.do";
+	</script>
+	<%
+}
+String result = String.valueOf(session.getAttribute("result"));
+if(result.equals("nothing")){
+	%>
+	<script type="text/javascript">
+		alert("존재하지 않는 학생입니다.");
+	</script>
+	<%
+} else if (result.equals("dup")){
+	%>
+	<script type="text/javascript">
+		alert("이미 존재하는 과목입니다.");
+	</script>
+	<%
+} else if (result.equals("err")){
+	%>
+	<script type="text/javascript">
+		alert("성적은 0~100점 사이입니다.");
+	</script>
+	<%
+}
+session.setAttribute("result", "null");
+%>
 <div class="content">
 <h1>학생 성적 관리 웹사이트(ver 0.7.0)</h1>
 <h2>학생 성적 관리</h2>
