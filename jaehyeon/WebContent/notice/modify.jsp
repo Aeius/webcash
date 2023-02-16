@@ -1,3 +1,4 @@
+<%@page import="com.bit.model.NoticeDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,19 +22,23 @@
 <div class="content">
 <h1>공지 사항</h1>
 <h2>글 수정</h2>
-<form action="insert.jsp" method="post">
+<%
+NoticeDTO bean = (NoticeDTO)request.getAttribute("detail");
+%>
+<form action="modify.do" method="post">
+<input type="hidden" name="num" value="<%=bean.getNum()%>">
 <table>
 	<tbody>
 	<tr>
 		<td>글제목</td>
 		<td>
-			<input type="text" name="sub">
+			<input type="text" name="title" value="<%=bean.getTitle()%>">
 		</td>
 	</tr>
 	<tr>
 		<td>글내용</td>
 		<td>
-			<textarea name="content" cols="50" rows="10"></textarea>
+			<textarea name="content" cols="50" rows="10"><%=bean.getContent() %></textarea>
 		</td>
 	</tr>
 	</tbody>

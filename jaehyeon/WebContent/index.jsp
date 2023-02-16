@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="com.bit.model.NoticeDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,7 +12,6 @@
 <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/carousel.js"></script>
-
 </head>
 <body>
 <%@ include file="template/header2.jsp" %>
@@ -24,10 +25,11 @@
             <li><img src="imgs/notice2.png"></li>
             <li><img src="imgs/notice3.png"></li>
             <li><img src="imgs/notice4.png"></li>
+            <li><img src="imgs/notice5.png"></li>
         </ul>
     </div>
 <h2>공지사항</h2>
-<table>
+<table class="board">
 	<thead>
 		<tr>
 			<th>글번호</th>
@@ -38,20 +40,19 @@
 		</tr>
 	</thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td><a href="detail.jsp">내용이 긴 제목이라서 계속해서 제목이 있는데 이것이 모바일에서 줄어 보일지?</a></td>
-            <td>박재현</td>
-            <td>2023-02-06</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>내용이 긴 제목2</td>
-            <td>박재현2</td>
-            <td>2023-02-06</td>
-            <td>1</td>
-        </tr>
+    <%
+    List<NoticeDTO> list = null;
+    list = (List<NoticeDTO>)request.getAttribute("notice");
+    for(NoticeDTO bean : list){
+    %>
+	   <tr>
+	       <td><a href="notice/detail.do?num=<%=bean.getNum()%>"><%=bean.getNum() %></a></td>
+	       <td><a href="notice/detail.do?num=<%=bean.getNum()%>"><%=bean.getTitle() %></a></td>
+	       <td><a href="notice/detail.do?num=<%=bean.getNum()%>"><%=bean.getUserName() %></a></td>
+	       <td><a href="notice/detail.do?num=<%=bean.getNum()%>"><%=bean.getDate() %></a></td>
+	       <td><a href="notice/detail.do?num=<%=bean.getNum()%>"><%=bean.getCnt() %></a></td>
+	   </tr>
+     <% }%>
     </tbody>
 </table>
 </div>

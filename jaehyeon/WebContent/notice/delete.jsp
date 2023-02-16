@@ -15,9 +15,10 @@
     
 <div class="content">
 <h2>공지사항 게시판</h2>
-<h2>1번 게시글을 삭제 하시겠습니까?</h2>
-<form action="list.jsp" method="post">
-	<input type="hidden" name="id" value="1">
+<% int num = Integer.parseInt(request.getParameter("num")); %>
+<h2><%=num %>번 게시글을 삭제 하시겠습니까?</h2>
+<form action="delete.do" method="post">
+	<input type="hidden" name="num" value="<%=num%>">
 	<input type="submit" value="확인">
 	<input type="button" value="취소" onclick="history.back()">
 </form>

@@ -2,11 +2,107 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>jaehyeon</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>index.do</welcome-file>
   </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>index</servlet-name>
+  	<servlet-class>com.bit.controller.IndexController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>index</servlet-name>
+  	<url-pattern>/index.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>notice</servlet-name>
+  	<servlet-class>com.bit.controller.NoticeController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>notice</servlet-name>
+  	<url-pattern>/notice/list.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>notice</servlet-name>
+  	<url-pattern>/notice/detail.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>notice</servlet-name>
+  	<url-pattern>/notice/write.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>notice</servlet-name>
+  	<url-pattern>/notice/modify.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>notice</servlet-name>
+  	<url-pattern>/notice/delete.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>correction</servlet-name>
+  	<servlet-class>com.bit.controller.CorrectionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>correction</servlet-name>
+  	<url-pattern>/correction/list.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>correction</servlet-name>
+  	<url-pattern>/correction/detail.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>correction</servlet-name>
+  	<url-pattern>/correction/write.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>correction</servlet-name>
+  	<url-pattern>/correction/modify.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>correction</servlet-name>
+  	<url-pattern>/correction/delete.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>correction</servlet-name>
+  	<url-pattern>/correction/reply.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>student</servlet-name>
+  	<servlet-class>com.bit.controller.StudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>student</servlet-name>
+  	<url-pattern>/student/list.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>teacher</servlet-name>
+  	<servlet-class>com.bit.controller.TeacherController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>teacher</servlet-name>
+  	<url-pattern>/teacher/list.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>teacher</servlet-name>
+  	<url-pattern>/teacher/achieve.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>teacher</servlet-name>
+  	<url-pattern>/teacher/addSub.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>teacher</servlet-name>
+  	<url-pattern>/teacher/addAchieve.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>teacher</servlet-name>
+  	<url-pattern>/teacher/putAchieve.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>teacher</servlet-name>
+  	<url-pattern>/teacher/delAchieve.do</url-pattern>
+  </servlet-mapping>
 </web-app>
