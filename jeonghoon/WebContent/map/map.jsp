@@ -22,7 +22,10 @@
 	</jsp:include>
 
 		<div id="content">
-			<p>오는 길</p>
+			<h2>오시는 길</h2>
+			<div>
+				<img alt="" src="../imgs/map.png">
+			</div>
 		
 		</div>
 	<jsp:include page="../template/footer.jsp"></jsp:include>

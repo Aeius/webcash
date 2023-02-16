@@ -13,7 +13,7 @@
 
 #content div+div {
 	width: 400px;
-	height: 380px;
+	height: 420px;
 	margin: 80px auto;
 	background-color: rgba(155, 255, 100, 0.2);
 }
@@ -51,7 +51,15 @@
 					</tr>
 					<tr>
 						<td align="right">이름</td>
-						<td><input type="text"></td>
+						<td><input type="text" name="uname"></td>
+					</tr>
+					<tr>
+						<td><br /></td>
+						<td />
+					</tr>
+					<tr>
+						<td align="right">ID</td>
+						<td><input type="text" name="uid"></td>
 					</tr>
 					<tr>
 						<td><br /></td>
@@ -59,7 +67,7 @@
 					</tr>
 				<tr>
 					<td align="right">비밀번호</td>
-					<td><input type="password"></td>
+					<td><input type="password" name="upw"></td>
 				</tr>
 				<tr>
 					<td><br /></td>
@@ -67,7 +75,7 @@
 				</tr>
 				<tr>
 					<td align="right">비밀번호 확인</td>
-					<td><input type="password"></td>
+					<td><input type="password" name="repw"></td>
 				</tr>
 				<tr>
 					<td><br /></td>
@@ -75,7 +83,7 @@
 				</tr>
 				<tr>
 					<td align="right">이메일</td>
-					<td><input type="email"></td>
+					<td><input type="email" name="umail"></td>
 				</tr>
 				<tr>
 					<td><br /></td>
