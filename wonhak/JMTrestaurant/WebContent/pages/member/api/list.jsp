@@ -41,7 +41,7 @@ try{
 	int startPage = startPage = currentPageNum*countDataInPage;
 	//else startPage = (currentPageNum*countDataInPage)+1;
 	//sql="select mem.* from member mem, (select @rownum=:@rownum+1 from dual) a "+sqlWhere+" order by mem.reg_date desc limit "+currentPageNum+", "+countDataInPage;
-	sql="select * from (select mem.*, @rownum:=@rownum+1 as num from member mem, (select @rownum:=0 from dual) a "+sqlWhere+") b order by num asc limit "+startPage+", "+countDataInPage;
+	sql="select * from (select mem.*, @rownum:=@rownum+1 as num from member mem, (select @rownum:=0 from dual) a "+sqlWhere+" order by mem.reg_date asc) b order by num asc limit "+startPage+", "+countDataInPage;
 	System.out.println(sql);
 	
 	stmt=conn.createStatement();

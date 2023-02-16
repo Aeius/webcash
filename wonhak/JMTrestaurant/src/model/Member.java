@@ -8,6 +8,7 @@ public class Member {
 	private int age;
 	private String gender;
 	private String reg_date;
+	private int level;
 	
 	public int getNum() {
 		return num;
@@ -51,9 +52,15 @@ public class Member {
 	public void setReg_date(String reg_date) {
 		this.reg_date = reg_date;
 	}
+	public int getLevel() {
+		return level;
+	}
+	public void setLevel(int level) {
+		this.level = level;
+	}
 	@Override
 	public String toString() {
 		return "{\"num\":" + num + ", \"m_id\":\"" + m_id + "\", \"name\":\"" + name + "\", \"email\":\"" + email + "\", \"age\":" + age
-				+ ", \"gender\":\"" + gender + "\", \"reg_date\":\"" + reg_date + "\"}";
+				+ ", \"gender\":\"" + gender + "\", \"level\":\""+level+"\", \"reg_date\":\"" + reg_date + "\"}";
 	}
 }

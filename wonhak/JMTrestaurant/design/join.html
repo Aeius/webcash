@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        #main .joinForm{
+            width: 500px;
+            padding:30px;
+            margin: 0 auto;
+            margin-top: 50px;
+            border: 1px solid #9d9c9c;
+            border-radius: 15px;
+        }
+        .joinForm .inputForm{
+            text-align: center;
+        }
+        .joinForm .inputForm>*{
+            width: 300px;
+            height: 35px;
+            margin-top: 40px;
+            font-size: 18px;
+        }
+        .joinForm .inputForm>.radioGroup{
+            text-align: right;
+        }
+        .joinForm .inputForm>.radioGroup>*:nth-child(2){
+            margin-right: 15px;
+        }
+        .joinForm .buttonForm{
+            text-align: center;
+            margin-top: 40px;
+        }
+        .joinForm .buttonForm>button{
+            width: 70%;
+            height: 50px;
+            border: 0px;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            background-color: red;
+            font-weight: bold;
+        }
+        .joinForm .buttonForm>div{
+            margin-top: 15px;
+        }
+        .joinForm .buttonForm>div>a{
+            color: red;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>우리 동네 JMT</h1>
+        <div></div>
+    </div>
+    <div id="nav">
+        <ul>
+            <li><a href="#" class="active">홈</a></li>
+            <li><a href="./">회원 목록</a></li>
+            <li><a href="./">맛집 목록</a></li>
+            <li><a href="./">커뮤니티</a></li>
+        </ul>
+    </div>
+    <div id="contents">
+        <div id="main">
+            <div class="joinForm">
+        		<form method="post">
+        			<div class="inputForm">
+        				<input type="text" name="m_id" placeholder="아이디를 입력하세요." />
+        				<input type="password" name="password" placeholder="비밀번호를 입력하세요." />
+                        <input type="password" name="password_re" placeholder="비밀번호 확인을 입력하세요." />
+                        <input type="text" name="email" placeholder="이메일을 입력하세요." />
+                        <select name="age">
+                            <option>8세</option>
+                            <option>9세</option>
+                            <option>10세</option>
+                            <option>11세</option>
+                            <option>12세</option>
+                        </select>
+                        <div class="radioGroup">
+                            <input type="radio" name="gender" value="M" checked><label>남자</label>
+                            <input type="radio" name="gender" value="F" ><label>여자</label>
+                        </div>
+        			</div>
+        			<div class="buttonForm">
+        				<button type="submit">회원가입 완료</button>
+        			</div>
+        		</form>
+        	</div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>
