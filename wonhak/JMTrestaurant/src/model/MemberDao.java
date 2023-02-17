@@ -99,7 +99,7 @@ public class MemberDao {
 	}
 	
 	public int insertData(String m_id, String password, String name, String email, int age, String gender) {
-		String sql="insert into member (m_id, password, name, email, age, gender, reg_date) values (?,?,?,?,?,?,now())";
+		String sql="insert into member (m_id, password, name, email, age, gender, reg_date) values (?,md5(?),?,?,?,?,now())";
 		int resultNumber=0;
 		try {
 			pstmt=conn.prepareStatement(sql);

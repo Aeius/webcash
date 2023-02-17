@@ -31,8 +31,9 @@ public class LoginController extends HttpServlet {
 		String password = req.getParameter("password")!=null?req.getParameter("password"):"";
 		
 		MemberDao dao = new MemberDao();
-		
+		System.out.println(m_id+" - "+password);
 		Member member = dao.getData(m_id,password);
+		System.out.println(member);
 		
 		HttpSession session = req.getSession();
 		if(member!=null) {

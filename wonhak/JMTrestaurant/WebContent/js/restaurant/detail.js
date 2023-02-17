@@ -17,6 +17,10 @@
  		 	var result = JSON.parse(xhr.responseText);
  		 	var data = result.data;
  		 	
+ 		 	var session_m_id = document.getElementById('session_m_id').value;
+ 		 	var session_level = document.getElementById('session_level').value;
+ 		 	
+ 		 	document.getElementById('m_id').value=data.m_id;
  		 	document.getElementById('name').value=data.name;
  		 	document.getElementById('name').style.backgroundColor='#ddd';
 			document.getElementById('addr').value=data.addr;
@@ -27,6 +31,10 @@
 			document.getElementById('loc_x').style.backgroundColor='#ddd';
 			document.getElementById('loc_y').value=data.loc_y;
 			document.getElementById('loc_y').style.backgroundColor='#ddd';
+			
+			if(session_m_id == data.m_id || session_level == 1){
+				document.getElementById('edit_btn').style.display='inline-block';
+			}
 			
 			var options = { //지도를 생성할 때 필요한 기본 옵션
 				center: new kakao.maps.LatLng(data.loc_x!=0?data.loc_x:35.125938053321796, data.loc_y!=0?data.loc_y:129.04540240071168), //지도의 중심좌표.
