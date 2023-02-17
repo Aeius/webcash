@@ -48,7 +48,7 @@
 				<a href="delete.do?num=<%=bean.getNum()%>">[삭제]</a>
 			</td>
 		</tr>
-		<% } else if(job.equals("교수")){ %>
+		<% } else if(job.equals("교수") || job.equals("학생")){ %>
 		<tr>
             <td colspan="2">
                 <a href="reply.do?num=<%=bean.getNum()%>">[답글]</a>
