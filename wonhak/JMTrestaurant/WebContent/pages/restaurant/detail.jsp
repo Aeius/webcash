@@ -8,6 +8,16 @@
     </jsp:include>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8fdc102fec7c743e98f39b3ed2466a1c"></script>
 </head>
+<%
+session = request.getSession();
+
+String m_id=null;
+int level=10;
+if(session.getAttribute("m_id")!=null){
+	m_id=session.getAttribute("m_id").toString();
+	level=Integer.parseInt(session.getAttribute("level").toString());
+}
+%>
 <body>
 	<jsp:include page="/pages/templates/header.jsp"></jsp:include> 
 	<jsp:include page="/pages/templates/nav.jsp"></jsp:include> 
@@ -22,7 +32,9 @@
                 int r_id=Integer.parseInt(request.getParameter("r_id"));
                 %>
                 	<input type="hidden" name="r_id" value="<%=r_id %>" readonly />
-                	<input type="hidden" name="m_id" value="test11" readonly />
+                	<input type="hidden" name="m_id" id="m_id" value="" readonly />
+                	<input type="hidden" name="session_m_id" id="session_m_id" value="<%=m_id %>" />
+                	<input type="hidden" name="session_level" id="session_level" value="<%=level %>" />
                     <div class="inputGroup">
                         <div class="inputForm">
                             <label for="name">맛집 이름</label>
@@ -49,7 +61,7 @@
                         </div>
                     </div>
                     <div class="buttonGroup">
-                        <button type="button" onclick="location.replace('./edit.do?r_id=<%=r_id %>')">수정</button>
+                    	<button type="button" id="edit_btn" style="display:none;" onclick="location.replace('./edit.do?r_id=<%=r_id %>')">수정</button>
                         <button type="button" onclick="location.replace('./list.do')">뒤로가기</button>
                     </div>
                 </form>
