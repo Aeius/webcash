@@ -70,6 +70,17 @@ public class TeacherController extends HttpServlet {
 			}
 			resp.sendRedirect("list.do");
 		}
+		// 성적 삭제
+		if(path.equals("/teacher/delSub.do")) {
+			SubjectDTO bean = new SubjectDTO();
+			bean.setName(req.getParameter("subName"));
+			try {
+				dao.deleteSub(bean);
+			} catch (SQLException e) {
+				session.setAttribute("result", "err");
+			}
+			resp.sendRedirect("list.do?subName="+req.getParameter("subName"));
+		}
 		// 성적 추가
 		if(path.equals("/teacher/addAchieve.do")) {
 			AchieveDTO bean = new AchieveDTO();

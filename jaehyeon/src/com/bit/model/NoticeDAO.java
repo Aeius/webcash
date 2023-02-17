@@ -70,7 +70,7 @@ public class NoticeDAO {
 	
 	public NoticeDTO selectOne(int num) throws SQLException{
 		log.setLevel(Level.SEVERE);
-		String sql = "select num, userNum, "
+		String sql = "select num, user_num, "
 				+ "(select name from user where num=a.user_num) as userName, "
 				+ "title, content, date, cnt from notice a where num=?";
 		String sql2 = "update notice set cnt=cnt+1 where num=?";
@@ -87,7 +87,7 @@ public class NoticeDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				bean.setNum(rs.getInt("num"));
-				bean.setUserNum(rs.getInt("userNum"))
+				bean.setUserNum(rs.getInt("user_num"));
 				bean.setUserName(rs.getNString("userName"));
 				bean.setTitle(rs.getNString("title"));
 				bean.setContent(rs.getNString("content"));

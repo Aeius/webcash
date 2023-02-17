@@ -40,8 +40,7 @@
 		<tr>
 		</tr>
 		<%
-		String userNum = String.valueOf(session.getAttribute("userNum"));
-		if(bean.getUserNum().equals(userNum){
+		if(userNum.equals(bean.getUserNum()+"")){
 		%>
 		<tr>
 			<td colspan="2">
