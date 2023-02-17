@@ -19,9 +19,13 @@
   * login, join
   * session
   * validation
-* board
+* notice, correction
   * CRUD 
-* reply
+  * reply
+  * auth
+* subject, achieve
+  * CRUD
+  * auth
 
 ## 🛕STRUCTURE
 ```
