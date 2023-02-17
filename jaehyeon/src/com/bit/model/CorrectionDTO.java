@@ -3,10 +3,18 @@ package com.bit.model;
 import java.util.Date;
 
 public class CorrectionDTO {
-	private int num, cnt, ref, seq, lvl;
+	private int num,userNum, cnt, ref, seq, lvl;
 	private String title, content, userName;
 	private Date date;
 	
+	
+	
+	public int getUserNum() {
+		return userNum;
+	}
+	public void setUserNum(int userNum) {
+		this.userNum = userNum;
+	}
 	public int getRef() {
 		return ref;
 	}

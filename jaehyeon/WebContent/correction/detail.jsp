@@ -40,17 +40,15 @@
 		<tr>
 		</tr>
 		<%
-        String userNum = String.valueOf(session.getAttribute("userNum"));
-        if(bean.getUserNum().equals(userNum){
+		if(userNum.equals(bean.getUserNum()+"")){
         %>
 		<tr>
 			<td colspan="2">
 				<a href="modify.do?num=<%=bean.getNum()%>">[수정]</a>
 				<a href="delete.do?num=<%=bean.getNum()%>">[삭제]</a>
-				<a href="reply.do?num=<%=bean.getNum()%>">[답글]</a>
 			</td>
 		</tr>
-		<% } else { %>
+		<% } else if(job.equals("교수")){ %>
 		<tr>
             <td colspan="2">
                 <a href="reply.do?num=<%=bean.getNum()%>">[답글]</a>

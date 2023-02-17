@@ -95,6 +95,10 @@
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>teacher</servlet-name>
+  	<url-pattern>/teacher/delSub.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>teacher</servlet-name>
   	<url-pattern>/teacher/addAchieve.do</url-pattern>
   </servlet-mapping>
   <servlet-mapping>

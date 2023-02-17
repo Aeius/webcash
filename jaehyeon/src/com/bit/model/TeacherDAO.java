@@ -126,4 +126,16 @@ public class TeacherDAO {
 			MyConn.close(conn);
 		}
 	}
+	public void deleteSub(SubjectDTO bean) throws SQLException {
+		String sql = "delete from subject where name=?";
+		try {
+			conn = MyConn.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setNString(1, bean.getName());
+			pstmt.executeUpdate();
+		} finally {
+			MyConn.close(pstmt);
+			MyConn.close(conn);
+		}
+	}
 }
