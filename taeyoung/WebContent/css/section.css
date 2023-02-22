@@ -1,0 +1,284 @@
+#section3{
+	width: 100%;
+	float: left;
+}
+#section1{
+	width: 50%;
+	float: left;
+}
+#section2{
+	width: 50%;
+	float: right;
+}
+#section1>div{
+	
+	margin-left: 150px;
+	margin-top: 50px;
+	width: 50%;
+}
+#section1>div>p{
+	
+	font-size: 15pt;
+	text-align: left;
+}
+#section1>div>img{
+	width: 100%;
+}
+#section2>div{
+	margin-right: 150px;
+	margin-top: 100px;
+	margin-bottom: 50px;
+}
+#section2>div+div{
+	margin-right: 150px;
+	margin-top: 150px;
+}
+#section2>div>p{
+	width: 300px;
+	height: 120px;
+	padding: 20px;
+	border: 2px solid gray;
+	border-radius: 2px;
+	margin-top: 10px;
+	float: left;
+}
+#section2>div+div>p{
+	margin-top: 100px;
+}
+
+#section3>p{
+	width: 200px;
+	height: 50px;
+	background-color: #9FC3A8;
+	margin: 0px auto;
+	padding: 0px;
+	border-radius: 7px;
+}
+#section3>p>a{
+	font-size: 14pt;
+	margin-top: 100px;
+	text-align: center;
+	color: white;
+	margin: 20px;
+	padding: 10px;
+	display: block;
+	font-weight: bold;
+	line-height: 30px;
+}
+#content1>div>button{
+	width: 80px;
+	height: 30px;
+	float: right;
+	margin-right: 170px;
+	background-color: whitesmoke;
+	font-size: 13pt;
+	border: 1px solid gray;
+	border-radius: 3px;
+}
+
+#section3>.table{
+	width: 70%;
+    margin: 20px auto;
+}
+
+#section3>.table>div{
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+#section3>.table>div>span{
+	display: inline-block;
+	width: 100px;
+}
+#section3>.table>div:first-child{
+	background-color: whitesmoke;
+	font-weight: bold;
+	text-align: center;
+}
+#section3>.table>div>span:first-child{
+	float: left;
+	text-align: center;
+	
+}
+#section3>.table>div>span:first-child+span{
+	margin-left: 10px;
+	text-align: center;
+	width: 470px;
+}
+#section3>.table>div>span:first-child+span+span{
+	float: left;
+}
+#section3>.table>div>span:last-child{
+	float: right;
+}
+#section4{
+	width: 100%;
+	float: left;
+}
+
+#section4>p{
+	width: 200px;
+	height: 50px;
+	background-color: #9FC3A8;
+	margin-left: 920px;
+	border-radius: 7px;
+}
+#section4>p>a{
+	font-size: 14pt;
+	line-height: 30px;
+	text-align: center;
+	padding: 10px;
+	display: block;
+	margin-top: 30px;
+	color: white;
+	font-weight: bold;
+}
+#section4>.text_table{
+	margin-left: 200px;
+}
+#section4>.text_table>form>#sub{
+	line-height: 40px;
+	height: 50px;
+	
+}
+#section4>.text_table>form>#sub>label{
+	margin-left: 80px;
+	font-size: 14pt;
+}
+#section4>.text_table>form>#sub>input{
+	margin-left: 80px;
+	height: 28px;
+	width: 709px;
+	font-size: 14pt;
+}
+#section4>.text_table>form>#text_content{
+	
+}
+#section4>.text_table>form>#text_content>textarea{
+	padding: 10px 0 0 10px;
+	font-size: 13pt;
+}
+#section4>.text_table>form>#btn{
+	margin-top: 10px;
+	float: right;
+}
+#section4>.text_table>form>#btn>button{
+	width: 100px;
+	margin-left: 10px;
+}
+
+
+
+
+#section5{
+	width: 100%;
+	float: left;
+}
+
+#section5>p{
+	width: 200px;
+	height: 50px;
+	background-color: #9FC3A8;
+	margin-left: 920px;
+	border-radius: 7px;
+}
+#section5>p>a{
+	font-size: 14pt;
+	line-height: 30px;
+	text-align: center;
+	padding: 10px;
+	display: block;
+	margin-top: 30px;
+	color: white;
+	font-weight: bold;
+}
+#section5>.text_table{
+	margin-left: 200px;
+}
+#section5>.text_table>#sub{
+	line-height: 40px;
+	height: 50px;
+	
+}
+#section5>.text_table>#id{
+	line-height: 40px;
+	height: 50px;
+}
+#section5>.text_table>#sub>label{
+	margin-left: 80px;
+	font-size: 14pt;
+}
+#section5>.text_table>#id>label{
+	margin-left: 75px;
+	font-size: 14pt;
+}
+
+#section5>.text_table>#text_content{
+	
+}
+
+#section5>.text_table>#btn{
+	margin-top: 10px;
+	float: right;
+}
+#section5>.text_table>#btn>button{
+	width: 100px;
+	margin-left: 10px;
+}
+
+
+
+#section6{
+	width: 100%;
+	float: left;
+}
+
+#section6>p{
+	width: 200px;
+	height: 50px;
+	background-color: #9FC3A8;
+	margin-left: 920px;
+	border-radius: 7px;
+}
+#section6>p>a{
+	font-size: 14pt;
+	line-height: 30px;
+	text-align: center;
+	padding: 10px;
+	display: block;
+	margin-top: 30px;
+	color: white;
+	font-weight: bold;
+}
+#section6>.text_table{
+	margin-left: 200px;
+}
+#section6>.text_table>form>#sub{
+	line-height: 40px;
+	height: 50px;
+	
+}
+#section6>.text_table>form>#userid{
+	line-height: 40px;
+	height: 50px;
+}
+#section6>.text_table>form>#sub>label{
+	margin-left: 80px;
+	font-size: 14pt;
+}
+#section6>.text_table>form>#userid>label{
+	margin-left: 75px;
+	font-size: 14pt;
+}
+
+#section6>.text_table>form>#text_content{
+	
+}
+
+#section6>.text_table>form+#btn{
+	margin-top: 10px;
+	float: right;
+}
+#section6>.text_table>form+#btn>button{
+	width: 100px;
+	margin-left: 10px;
+}

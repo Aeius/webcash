@@ -3,10 +3,20 @@
   <display-name>taeyoung</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <context-param>
+  	<param-name>user</param-name>
+  	<param-value>scott</param-value>
+  </context-param>
+  <context-param>
+  <param-name>password</param-name>
+  	<param-value>tiger</param-value>
+  </context-param>
+  <context-param>
+  <param-name>url</param-name>
+  	<param-value>jdbc:mysql://localhost:3306/lecture</param-value>
+  </context-param>
+  
+  
+  
 </web-app>

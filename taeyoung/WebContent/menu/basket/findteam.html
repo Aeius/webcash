@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>운동 종목</title>
+<link rel="stylesheet" href="../../css/header.css">
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/menu.css">
+<link rel="stylesheet" href="../../css/content.css">
+<link rel="stylesheet" href="../../css/side.css">
+<link rel="stylesheet" href="../../css/section.css">
+<link rel="stylesheet" href="../../css/footer.css">
+<style rel="stylesheet" type="text/css">
+
+</style>
+<script type="text/javascript" src="../../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="../../js/menu.js"></script>
+
+<script type="text/javascript">
+    var bx;
+$(function(){
+	findList();
+    bx= $('.bx').bxSlider();
+	$('.bx-controls').hide();
+	setInterval(bx.goToNextSlide,3000);
+
+	$('#content1>div>button').click(function(){
+		$(location).attr("href","../../menu/add.html?id=admin1@admin.com&api=findadd.json"/*+id*/);
+	});
+
+});
+	function findList(){
+		   
+            $.getJSON('http://127.0.0.1:8080/taeyoung/api/findlist.json', function(data){
+				var x=0;
+                for(obj of data.tybasketfind01){
+                    var row=$('<div/>').css('background-color','whitesmoke')
+					.attr("href","../../menu/detail.html?num="+obj.num+"&api=find1.json")
+					.click(function(){
+						$(location).attr("href",($(this).attr("href")));
+						
+					});
+
+					var id=obj.id;
+					x++; 
+					id=id.substring(0,id.indexOf('@'));
+                    $('<span/>').html(x).appendTo(row);
+                    $('<span/>').css('text-align','center').html(obj.sub).appendTo(row);
+					$('<span/>').css('text-align','center').html(id).appendTo(row);
+					$('<span/>').css('text-align','center').html(obj.cnt).appendTo(row);
+                    $('#section3>.table').append(row);
+                }
+            })
+            
+            
+        }
+</script>
+</head>
+<body>
+	<div id="header">
+		<a href="../../index.html"><img src="../../imgs/logo.png" id="logo"/></a>
+		<div>
+			<button type="button" id="loginbtn" onclick="location.href='../../login/login.html'">로그인</button>
+			<button type="button" id="joinbtn" onclick="location.href='../../login/join.html'">회원가입</button>
+		</div>
+	</div>
+    <div id="menu">
+		<ul>
+			<li>종목
+				<ul>
+					<li><a href="../../menu/basket.html">농구</a></li>
+					<li><a href="../../menu/football.html">축구</a></li>
+					<li><a href="../../menu/ready.html">족구</a></li>
+					<li><a href="../../menu/ready.html">배드민턴</a></li>
+					<li><a href="../../menu/ready.html">풋살</a></li>
+				</ul>
+			</li>
+			<li>게시판
+				<ul>
+					<li><a href="../../menu/basket.html">자유</a></li>
+					<li><a href="../../menu/findteam.html">팀찾기</a></li>
+					<li><a href="../../menu/ready.html">같이할사람모집</a></li>
+					<li><a href="../../menu/ready.html">NBA</a></li>
+					<li><a href="../../menu/ready.html">KBL</a></li>
+				</ul>
+			</li>
+			<li>문의사항
+				<ul>
+					<li><a href="../../menu/help.html">관리자요청</a></li>
+				</ul>
+			</li>
+			<li>예약
+				<ul>
+					<li><a href="../../menu/reservation.html">빅보이짐</a></li>
+					<li><a href="../ready.html">연제구</a></li>
+					<li><a href="../ready.html">하이스포츠</a></li>
+					<li><a href="../ready.html">바스켓몽</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div id="content1">
+		<div id="section3">
+			<p><a>팀 찾기 게시판</a></p>
+            <div class="table">
+                <div>
+                    <span>번호</span>
+                    <span>제목</span>
+					<span>ID</span>
+                    <span>조회수</span>
+                </div>
+            </div>
+		</div>
+		<div><button >글쓰기</button></div>
+	</div>
+	<div id="side">
+		<div class="bx">
+			<div><img src="../../imgs/socks1.png" alt="img01"></div>
+			<div><img src="../../imgs/socks2.png" alt="img02"></div>
+			<div><img src="../../imgs/socks3.png" alt="img03"></div>
+			<div><img src="../../imgs/socks4.png" alt="img04"></div>
+			<div><img src="../../imgs/socks5.png" alt="img05"></div>
+			<div><img src="../../imgs/socks6.png" alt="img06"></div>
+			<div><img src="../../imgs/socks7.png" alt="img06"></div>
+			<div><img src="../../imgs/socks8.png" alt="img06"></div>
+		</div>
+		<p><a href="https://www.masterwook.com/">마스터욱 스포츠양말</a></p>
+	</div>
+	<div id="footer">
+		&copy; by Taeyoung co.ltd. Allrights reserved.<br>
+		웹케시 그룹 교육생 2기 부산광역시 동구 중앙대로 331 메리츠화재
+	</div>
+</body>
+</html>
