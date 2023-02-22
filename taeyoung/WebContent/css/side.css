@@ -1,0 +1,20 @@
+#side{
+	width: 15%;
+	float: right;
+}
+#side>p{
+	width: 87%;
+	text-align: center;
+	background-color: #9FC3A8;
+	height: 30px;
+	
+	margin: 0px auto;
+	padding: 10px;
+	
+}
+#side>p>a{
+	line-height: 30px;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
