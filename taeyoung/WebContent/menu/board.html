@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>운동 종목</title>
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../css/menu.css">
+<link rel="stylesheet" href="../css/content.css">
+<link rel="stylesheet" href="../css/side.css">
+<link rel="stylesheet" href="../css/section.css">
+<link rel="stylesheet" href="../css/footer.css">
+<style rel="stylesheet" type="text/css">
+
+</style>
+<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../js/menu.js"></script>
+
+<script type="text/javascript">
+
+$(function(){
+	deptList();
+})
+	function deptList(){
+		   
+            $.getJSON('http://127.0.0.1:8080/taeyoung/api/list.json', function(data){
+				var x=0;
+                for(obj of data.tybasket01){
+                    var row=$('<div/>').css('background-color','whitesmoke');
+					var id=obj.id;
+					x++; 
+					id=id.substring(0,id.indexOf('@'));
+                    $('<span/>').html(x).appendTo(row);
+                    $('<span/>').css('text-align','center').html(obj.sub).appendTo(row);
+					$('<span/>').css('text-align','center').html(id).appendTo(row);
+					$('<span/>').css('text-align','center').html(obj.cnt).appendTo(row);
+                    $('#section1>.table').append(row);
+                }
+            })
+            
+            
+        }
+</script>
+</head>
+<body>
+	<div id="header">
+		<a href="../index.html"><img src="../imgs/logo.png" id="logo"/></a>
+		<div>
+			<form action="">
+				<label for="id">ID</label>
+				<input type="text" name="id" id="id"/>
+				<label for="pw">PW</label>
+				<input type="password" name="pw" id="pw"/>
+				<button id="loginbtn">로그인</button>
+				<button id="joinbtn"><a href="../login/join.html">가입하기</a></button>
+			</form>
+		</div>
+	</div>
+    <div id="menu">
+		<ul>
+			<li>종목
+				<ul>
+					<li><a href="../menu/kind.html">농구</a></li>
+					<li><a href="../menu/kind.html">축구</a></li>
+					<li><a href="../menu/kind.html">족구</a></li>
+					<li><a href="../menu/kind.html">배드민턴</a></li>
+					<li><a href="../menu/kind.html">풋살</a></li>
+				</ul>
+			</li>
+			<li>게시판
+				<ul>
+					<li><a href="../menu/board.html">자유</a></li>
+					<li><a href="../menu/board.html">팀찾기</a></li>
+					<li><a href="../menu/board.html">같이할사람모집</a></li>
+					<li><a href="../menu/board.html">NBA</a></li>
+					<li><a href="../menu/board.html">KBL</a></li>
+				</ul>
+			</li>
+			<li>Help
+				<ul>
+					<li><a href="../menu/help.html">관리자요청</a></li>
+				</ul>
+			</li>
+			<li>예약
+				<ul>
+					<li><a href="../menu/reservation.html">빅보이짐</a></li>
+					<li><a href="../menu/reservation.html">연제구</a></li>
+					<li><a href="../menu/reservation.html">하이스포츠</a></li>
+					<li><a href="../menu/reservation.html">바스켓몽</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div id="content">
+		<div id="section1">
+			<p><a>농구 게시판</a></p>
+            <div class="table">
+                <div>
+                    <span>번호</span>
+                    <span>제목</span>
+					<span>ID</span>
+                    <span>조회수</span>
+                </div>
+            </div>
+		</div>
+	</div>
+	<div id="side">
+		<img src="../imgs/side.jpg" alt="">
+		aside1
+	</div>
+	<div id="footer">
+		&copy; by Taeyoung co.ltd. Allrights reserved.<br>
+		웹케시 그룹 교육생 2기 부산광역시 동구 중앙대로 331 메리츠화재
+	</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+#logo{
+	float: left;
+	width: 200px;
+    height: 72px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+#header{
+	overflow: hidden;
+	
+}
+#header>div{
+	width: 450px;
+	float: right;
+	padding-top : 25px;
+	margin-right: 150px;
+}
+
+#header>div>button{
+	display: inline-block;
+	width: 120px;
+	height: 35px;
+	color: white;
+	font-weight: bold;
+	font-size: 13pt;
+	border: 2px  ;
+	border-radius: 5px;
+	text-align: center; 
+	background-color: #9FC3A8;
+	margin: 5px;
+	
+}
