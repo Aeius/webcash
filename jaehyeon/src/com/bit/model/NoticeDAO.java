@@ -107,7 +107,7 @@ public class NoticeDAO {
 		log.setLevel(Level.SEVERE);
 		String sql = "select num, "
 				+ "(select name from user where num=a.user_num) as user_name, "
-				+ "title, content, date, cnt from notice a order by num desc";
+				+ "title, content, date, cnt from notice a order by num desc limit 10";
 		List<NoticeDTO> list = new ArrayList<NoticeDTO>();
 		try {
 			conn = MyConn.getConnection();

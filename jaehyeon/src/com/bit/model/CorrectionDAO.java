@@ -156,7 +156,7 @@ public class CorrectionDAO {
 		log.setLevel(Level.SEVERE);
 		String sql = "select num, "
 				+ "(select name from user where num=a.user_num) as user_name, "
-				+ "title, content, date, cnt from correction a order by ref desc, seq asc";
+				+ "title, content, date, cnt from correction a order by ref desc, seq asc limit 10";
 		List<CorrectionDTO> list = new ArrayList<CorrectionDTO>();
 		try {
 			conn = MyConn.getConnection();

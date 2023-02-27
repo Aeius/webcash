@@ -76,6 +76,26 @@ create table notice(
 -- dummy
 insert into notice value(0, 00000001, '점수 정정기간 신청 안내', '정정 기간은 2월 17일 까지입니다.',now(),0);
 insert into notice value(0, 00000001, '학생 성적 관리 안내', '교수님들께선 로그인 후 학생 성적 관리를 하실 수 있으십니다.',now(),0);
+insert into notice value(0, 00000001, '점수 정정기간 신청 안내', '정정 기간은 2월 17일 까지입니다.',now(),0);
+insert into notice value(0, 00000001, '학생 성적 관리 안내', '교수님들께선 로그인 후 학생 성적 관리를 하실 수 있으십니다.',now(),0);
+insert into notice value(0, 00000001, '점수 정정기간 신청 안내', '정정 기간은 2월 17일 까지입니다.',now(),0);
+insert into notice value(0, 00000001, '학생 성적 관리 안내', '교수님들께선 로그인 후 학생 성적 관리를 하실 수 있으십니다.',now(),0);
+insert into notice value(0, 00000001, '점수 정정기간 신청 안내', '정정 기간은 2월 17일 까지입니다.',now(),0);
+insert into notice value(0, 00000001, '학생 성적 관리 안내', '교수님들께선 로그인 후 학생 성적 관리를 하실 수 있으십니다.',now(),0);
+insert into notice value(0, 00000001, '점수 정정기간 신청 안내', '정정 기간은 2월 17일 까지입니다.',now(),0);
+insert into notice value(0, 00000001, '학생 성적 관리 안내', '교수님들께선 로그인 후 학생 성적 관리를 하실 수 있으십니다.',now(),0);
+insert into notice value(0, 00000001, '점수 정정기간 신청 안내', '정정 기간은 2월 17일 까지입니다.',now(),0);
+insert into notice value(0, 00000001, '학생 성적 관리 안내', '교수님들께선 로그인 후 학생 성적 관리를 하실 수 있으십니다.',now(),0);
+insert into notice value(0, 00000001, '점수 정정기간 신청 안내', '정정 기간은 2월 17일 까지입니다.',now(),0);
+insert into notice value(0, 00000001, '학생 성적 관리 안내', '교수님들께선 로그인 후 학생 성적 관리를 하실 수 있으십니다.',now(),0);
+insert into notice value(0, 00000001, '점수 정정기간 신청 안내', '정정 기간은 2월 17일 까지입니다.',now(),0);
+insert into notice value(0, 00000001, '학생 성적 관리 안내', '교수님들께선 로그인 후 학생 성적 관리를 하실 수 있으십니다.',now(),0);
+insert into notice value(0, 00000001, '점수 정정기간 신청 안내', '정정 기간은 2월 17일 까지입니다.',now(),0);
+insert into notice value(0, 00000001, '학생 성적 관리 안내', '교수님들께선 로그인 후 학생 성적 관리를 하실 수 있으십니다.',now(),0);
+insert into notice value(0, 00000001, '점수 정정기간 신청 안내', '정정 기간은 2월 17일 까지입니다.',now(),0);
+insert into notice value(0, 00000001, '학생 성적 관리 안내', '교수님들께선 로그인 후 학생 성적 관리를 하실 수 있으십니다.',now(),0);
+insert into notice value(0, 00000001, '점수 정정기간 신청 안내', '정정 기간은 2월 17일 까지입니다.',now(),0);
+insert into notice value(0, 00000001, '학생 성적 관리 안내', '교수님들께선 로그인 후 학생 성적 관리를 하실 수 있으십니다.',now(),0);
 
 -- 정정 요청 게시판
 create table correction(
@@ -94,10 +114,32 @@ create table correction(
 -- dummy
 insert into correction value(0, 20230201,'java 성적 정정 요청 합니다', 'java 성적이 잘못된 것 같습니다.',now(), 1,0,0,0);
 insert into correction value(0, 20230203,'DB 성적 정정 요청 합니다', 'DB 성적이 잘못된 것 같습니다.',now(), (select max(num)+1 from correction b),0,0,0);
+insert into correction value(0, 20230201,'java 성적 정정 요청 합니다', 'java 성적이 잘못된 것 같습니다.',now(), 1,0,0,0);
+insert into correction value(0, 20230203,'DB 성적 정정 요청 합니다', 'DB 성적이 잘못된 것 같습니다.',now(), (select max(num)+1 from correction b),0,0,0);
+insert into correction value(0, 20230201,'java 성적 정정 요청 합니다', 'java 성적이 잘못된 것 같습니다.',now(), 1,0,0,0);
+insert into correction value(0, 20230203,'DB 성적 정정 요청 합니다', 'DB 성적이 잘못된 것 같습니다.',now(), (select max(num)+1 from correction b),0,0,0);
+insert into correction value(0, 20230201,'java 성적 정정 요청 합니다', 'java 성적이 잘못된 것 같습니다.',now(), 1,0,0,0);
+insert into correction value(0, 20230203,'DB 성적 정정 요청 합니다', 'DB 성적이 잘못된 것 같습니다.',now(), (select max(num)+1 from correction b),0,0,0);
+insert into correction value(0, 20230201,'java 성적 정정 요청 합니다', 'java 성적이 잘못된 것 같습니다.',now(), 1,0,0,0);
+insert into correction value(0, 20230203,'DB 성적 정정 요청 합니다', 'DB 성적이 잘못된 것 같습니다.',now(), (select max(num)+1 from correction b),0,0,0);
+insert into correction value(0, 20230201,'java 성적 정정 요청 합니다', 'java 성적이 잘못된 것 같습니다.',now(), 1,0,0,0);
+insert into correction value(0, 20230203,'DB 성적 정정 요청 합니다', 'DB 성적이 잘못된 것 같습니다.',now(), (select max(num)+1 from correction b),0,0,0);
+insert into correction value(0, 20230201,'java 성적 정정 요청 합니다', 'java 성적이 잘못된 것 같습니다.',now(), 1,0,0,0);
+insert into correction value(0, 20230203,'DB 성적 정정 요청 합니다', 'DB 성적이 잘못된 것 같습니다.',now(), (select max(num)+1 from correction b),0,0,0);
+insert into correction value(0, 20230201,'java 성적 정정 요청 합니다', 'java 성적이 잘못된 것 같습니다.',now(), 1,0,0,0);
+insert into correction value(0, 20230203,'DB 성적 정정 요청 합니다', 'DB 성적이 잘못된 것 같습니다.',now(), (select max(num)+1 from correction b),0,0,0);
+insert into correction value(0, 20230201,'java 성적 정정 요청 합니다', 'java 성적이 잘못된 것 같습니다.',now(), 1,0,0,0);
+insert into correction value(0, 20230203,'DB 성적 정정 요청 합니다', 'DB 성적이 잘못된 것 같습니다.',now(), (select max(num)+1 from correction b),0,0,0);
+insert into correction value(0, 20230201,'java 성적 정정 요청 합니다', 'java 성적이 잘못된 것 같습니다.',now(), 1,0,0,0);
+insert into correction value(0, 20230203,'DB 성적 정정 요청 합니다', 'DB 성적이 잘못된 것 같습니다.',now(), (select max(num)+1 from correction b),0,0,0);
+insert into correction value(0, 20230201,'java 성적 정정 요청 합니다', 'java 성적이 잘못된 것 같습니다.',now(), 1,0,0,0);
+insert into correction value(0, 20230203,'DB 성적 정정 요청 합니다', 'DB 성적이 잘못된 것 같습니다.',now(), (select max(num)+1 from correction b),0,0,0);
+insert into correction value(0, 20230201,'java 성적 정정 요청 합니다', 'java 성적이 잘못된 것 같습니다.',now(), 1,0,0,0);
+insert into correction value(0, 20230203,'DB 성적 정정 요청 합니다', 'DB 성적이 잘못된 것 같습니다.',now(), (select max(num)+1 from correction b),0,0,0);
+insert into correction value(0, 20230201,'java 성적 정정 요청 합니다', 'java 성적이 잘못된 것 같습니다.',now(), 1,0,0,0);
+insert into correction value(0, 20230203,'DB 성적 정정 요청 합니다', 'DB 성적이 잘못된 것 같습니다.',now(), (select max(num)+1 from correction b),0,0,0);
 
 -- test
-select num,
-(select name from user where num=a.user_num) as userName,
-title, content, date, cnt 
-from notice a where num=1;
+select * from notice;
+select * from correction;
 

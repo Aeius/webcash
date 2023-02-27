@@ -12,7 +12,7 @@
 <body>
 <%@ include file="../template/header.jsp" %>
 <%@ include file="../template/menu2.jsp" %>
-    
+
 <div class="content">
 <h2>정정 요청 게시판</h2>
 <h2>글 작성</h2>

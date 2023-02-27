@@ -173,6 +173,7 @@ session.setAttribute("result", "null");
     	</tr>
     </tbody>
 </table>
+
 </div>
 <div class="modal1">
 	<div class="modal-body1">

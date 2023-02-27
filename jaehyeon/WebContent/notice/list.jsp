@@ -12,10 +12,11 @@
 <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
 <style type="text/css">
 #search{
+	width: 500px;
 	margin:10px auto;
 	text-align: center;
 }
-#search>div{
+#search>a{
 	width: 200px;
 	height: 90px;
 	border-bottom: 2px solid gray;
@@ -56,8 +57,24 @@
 		<% }%>
     </tbody>
 </table>
+	<div id="pagination">
+  		<a href="#">이전</a>
+  		<a href="#">1</a>
+  		<a href="#">2</a>
+  		<a href="#">3</a>
+  		<a href="#">4</a>
+  		<a href="#">5</a>
+  		<a href="#">이후</a>
+  	</div>
   	<div id="search">
-  		<a href="write.do">글작성</a>
+  		<select>
+  			<option>제목</option>
+  			<option>작성자</option>
+  			<option>내용</option>
+  		</select>
+  		<input type="text" name="search">
+  		<button type="submit">검색</button>
+  		<a href="write.jsp">글작성</a>
     </div>
 </div>
 <%@ include file="../template/footer.jsp"%>
